@@ -48,12 +48,17 @@ const Navbar = () => {
         src="https://i.postimg.cc/7hkMR1VW/empty-face-icon-avatar-with-black-hair-vector-illustration-601298-13402-removebg-preview.png"
         alt="Bordered avatar"
       />
+      {
+        profileOpen ? <div className="shadow absolute mt-3 right-0 mr-6 z-40 bg-[#E2E8F0] w-32 md:w-40 text-center">
+        {profileLinks}
+      </div>: ''
+      }
       </div>
       {/* <button>Logout</button> */}
     </>
   );
   return (
-    <div>
+    <div className="relative">
       <div className="bg-opacity-40 shadow py-2">
       <div className="flex justify-between max-w-screen-xl items-center mx-auto">
         {/* Logo */}
@@ -69,11 +74,7 @@ const Navbar = () => {
         <div className="flex gap-6 items-center">{links}</div>
       </div>
     </div>
-    {
-        profileOpen ? <div className="absolute right-0 shadow mx-4 z-40 bg-[#E2E8F0] w-32 md:w-40 text-center">
-        {profileLinks}
-      </div>: ''
-      }
+    
     </div>
   );
 };
