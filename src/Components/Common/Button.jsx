@@ -9,7 +9,7 @@ const Button = ({ children, onClick, className }) => {
     >
       {children}
     </button>
-  );
+  ); 
 };
 
 export default Button;
