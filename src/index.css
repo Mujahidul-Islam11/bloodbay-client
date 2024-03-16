@@ -3,34 +3,29 @@
 @tailwind utilities;
 
 body{
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
 }
-.roboto-regular {
-  font-family: "Roboto", sans-serif;
+
+.lato-400 {
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.roboto-medium {
-  font-family: "Roboto", sans-serif;
+.lato-bold-500 {
+  font-family: "Lato", sans-serif;
   font-weight: 500;
-  font-style: normal;
+  font-style: normal; 
 }
 
-.roboto-bold {
-  font-family: "Roboto", sans-serif;
+.lato-bold-700 {
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
-.roboto-black {
-  font-family: "Roboto", sans-serif;
+.lato-extra-bold {
+  font-family: "Lato", sans-serif;
   font-weight: 900;
-  font-style: normal;
-}
-
-.roboto-thin {
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
   font-style: normal;
 }
