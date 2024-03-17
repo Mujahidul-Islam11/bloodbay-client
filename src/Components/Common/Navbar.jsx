@@ -1,11 +1,22 @@
 import { NavLink } from "react-router-dom";
-import { MdLogin } from "react-icons/md";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { RiMenu2Fill } from "react-icons/ri";
+import { AuthContext } from "../../AuthProvider";
+import swal from "sweetalert";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const [profileOpen, setProfileOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((err) => {
+        console.error(err);
+      });
+    swal("Logged Out", "Successfully logged out", "success");
+  };
 
   const profileLinks = (
     <>
@@ -21,15 +32,20 @@ const Navbar = () => {
         </button>
       </NavLink>{" "}
       <br />
-      <NavLink>
-        <button className="text-xl w-full py-2 hover:bg-[#c8cdd5]">
-          Settings
+      {user ? (
+        <button
+          onClick={() => handleLogOut()}
+          className="text-xl w-full py-2 text-red-500 hover:bg-red-500 hover:text-white"
+        >
+          Log Out
         </button>
-      </NavLink>{" "}
-      <br />
-      <button className="text-xl w-full py-2 text-red-500 hover:bg-red-500 hover:text-white">
-        Log Out
-      </button>
+      ) : (
+        <NavLink to={"/logIn"}>
+          <button className="text-xl w-full py-2 hover:bg-[#FF0563] hover:text-white">
+            Log In
+          </button>
+        </NavLink>
+      )}
     </>
   );
 
@@ -130,11 +146,15 @@ const Navbar = () => {
             <img
               onClick={() => setProfileOpen(!profileOpen)}
               className="w-12 cursor-pointer h-12 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
-              src="https://i.postimg.cc/7hkMR1VW/empty-face-icon-avatar-with-black-hair-vector-illustration-601298-13402-removebg-preview.png"
+              src={
+                user
+                  ? user.photoURL
+                  : "https://i.postimg.cc/7hkMR1VW/empty-face-icon-avatar-with-black-hair-vector-illustration-601298-13402-removebg-preview.png"
+              }
               alt="Bordered avatar"
             />
             {profileOpen ? (
-              <div className="shadow absolute mt-56 right-0 mr-6 z-40 bg-[#E2E8F0] w-32 md:w-40 text-center">
+              <div className="shadow absolute mt-44 right-0 mr-6 z-40 bg-[#E2E8F0] w-32 md:w-40 text-center">
                 {profileLinks}
               </div>
             ) : (
