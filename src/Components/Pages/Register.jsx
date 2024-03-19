@@ -28,7 +28,7 @@ const Register = () => {
     const email = form.email.value;
     const pass = form.pass.value;
     const confirmPass = form.confirmPass.value;
-    const upaZilla = UpaZilla;
+    const upazilla = UpaZilla;
     const district = District;
     const bloodGroup = blood;
     const image = form.image.files[0];
@@ -47,7 +47,7 @@ const Register = () => {
       email,
       pass,
       confirmPass,
-      upaZilla,
+      upazilla,
       district,
       bloodGroup,
       image: imageUrl,
