@@ -44,7 +44,7 @@ const Search = () => {
       });
   }, []);
   const handleSearch = () =>{
-      const data = donarData.filter(item => item.upazilla == UpaZilla || item.district == District);
+      const data = donarData.filter(item => item.upazilla === UpaZilla || item.district === District);
       setFilteredData(data)
   }
   console.log(UpaZilla)
