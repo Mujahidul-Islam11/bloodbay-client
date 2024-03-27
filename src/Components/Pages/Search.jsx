@@ -35,7 +35,7 @@ const Search = () => {
   }, []);
   useEffect(() => {
     axios
-      .get("/public/donarData.json")
+      .get("../../../public/donarData.json")
       .then((res) => {
         setDonarData(res.data);
       })
@@ -47,9 +47,9 @@ const Search = () => {
       const data = donarData.filter(item => item.upazilla == UpaZilla || item.district == District);
       setFilteredData(data)
   }
-  console.log(filteredData)
+  console.log(UpaZilla)
     return (
-        <div className=" py-32 md:py-40 px-2">
+        <div className=" py-32 md:py-32 px-2">
             <div className="md:flex justify-center">
             <div className="flex">
               <div>
@@ -60,7 +60,7 @@ const Search = () => {
                   onChange={(event) => setUpaZilla(event.target.value)}
                   className="bg-gray-50 border cursor-pointer outline-none rounded-r-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
-                  <option value="" defaultValue>
+                  <option value="Rangunia" defaultValue>
                     Rangunia
                   </option>
                   {/* Mapping over Upazilla data */}
@@ -79,7 +79,7 @@ const Search = () => {
                   onChange={(event) => setDistrict(event.target.value)}
                   className="bg-gray-50 border outline-none cursor-pointer rounded-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
-                  <option value="" defaultValue>
+                  <option value="Chattogram" defaultValue>
                     Chattogram
                   </option>
                   {districts.map((upa) => (
