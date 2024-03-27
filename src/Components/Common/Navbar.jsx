@@ -67,21 +67,6 @@ const Navbar = () => {
       </NavLink>{" "}
       <br />
       <NavLink
-        to={"/search"}
-        className={({ isActive, isPending }) =>
-          isPending
-            ? "pending"
-            : isActive
-            ? "border-b border-gray-700 text-[#FF0563]"
-            : ""
-        }
-      >
-        <button className="text-xl text-center hover:text-[#FF0563] font-semibold">
-          Search Donors
-        </button>
-      </NavLink>{" "}
-      <br />
-      <NavLink
         to={"/blog"}
         className={({ isActive, isPending }) =>
           isPending
@@ -96,7 +81,20 @@ const Navbar = () => {
         </button>
       </NavLink>{" "}
       <br />
-      <NavLink
+      {user ? <NavLink
+        to={"/donaReq"}
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? "border-b border-gray-700 text-[#FF0563]"
+            : ""
+        }
+      >
+        <button className="text-xl hover:text-[#FF0563] font-semibold  flex items-center gap-2">
+          Donation Request
+        </button>
+      </NavLink>: <NavLink
         to={"/signUp"}
         className={({ isActive, isPending }) =>
           isPending
@@ -109,8 +107,21 @@ const Navbar = () => {
         <button className="text-xl hover:text-[#FF0563] font-semibold  flex items-center gap-2">
           Register
         </button>
-      </NavLink>
-      <NavLink
+      </NavLink>}
+      {user?<NavLink
+        to={"/payment"}
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? "border-b border-gray-700 text-[#FF0563]"
+            : ""
+        }
+      >
+        <button className="text-xl text-center hover:text-[#FF0563] font-semibold flex items-center gap-2">
+          Payment
+        </button>
+      </NavLink>: <NavLink
         to={"/logIn"}
         className={({ isActive, isPending }) =>
           isPending
@@ -123,7 +134,7 @@ const Navbar = () => {
         <button className="text-xl text-center hover:text-[#FF0563] font-semibold flex items-center gap-2">
           Log In
         </button>
-      </NavLink>{" "}
+      </NavLink>}{" "}
       <br />
       {/* <button>Logout</button> */}
     </>

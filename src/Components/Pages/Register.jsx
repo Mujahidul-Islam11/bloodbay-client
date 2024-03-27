@@ -22,6 +22,7 @@ const Register = () => {
   const naviGate = useNavigate();
 
   const handleSubmit = async (e) => {
+    // accessing form data
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -35,11 +36,13 @@ const Register = () => {
     const imageFile = { image: image };
 
     // imgbb post method for getting image url
+
     const imageRes = await axios.post(image_hosting_api, imageFile, {
       headers: {
         "content-type": "multipart/form-data",
       },
     });
+
     // the response url
     const imageUrl = imageRes.data.data.display_url;
     const userData = {
@@ -55,7 +58,7 @@ const Register = () => {
       status: "active",
     };
     console.log(userData);
-
+    // auth:- creating user
     if (pass !== confirmPass) {
       swal(
         "Wrong Password!",
@@ -84,6 +87,7 @@ const Register = () => {
     }
   };
 
+  // getting the data from upazila and district json file
   useEffect(() => {
     axios
       .get("/public/upazilla.json")
@@ -107,15 +111,15 @@ const Register = () => {
   }, []);
 
   return (
-    <div className="md:flex">
+    <div className="md:flex h-screen">
       <img
-        src="https://i.ibb.co/xFHqD5Z/a8bc16135c4752c9274f4c4e7177c31f.jpg"
+        src="https://i.ibb.co/pXgG0xf/pexels-photo-5340276.jpg"
         alt=""
-        className=" md:w-6/12 mb-6 md:min-h-screen"
+        className=" md:w-8/12 mb-6 md:min-h-screen"
       />
       <form
         onSubmit={handleSubmit}
-        className="px-4 py-6 rounded-sm md:w-6/12 border md:border-l"
+        className="px-4 py-6 rounded-sm md:w-6/12 border md:border-l md:min-h-screen"
       >
         <h2 className="text-2xl -mb-10 md:text-4xl lato-bold-700 text-center">
           Register<span className="text-[#FF0563]">!</span>
