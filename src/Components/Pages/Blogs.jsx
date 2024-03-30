@@ -41,7 +41,7 @@ const Blogs = () => {
               <h1 className="text-2xl text-gray-800 lato-bold-600 my-3">
                 {blog?.title}
               </h1>
-              <p className="text-gray-500">{blog?.content.slice(0, 300)}...</p>
+              <p className="text-gray-500">{blog?.content.slice(0, 250)}...</p>
             </div>
           </div>
         ))}
