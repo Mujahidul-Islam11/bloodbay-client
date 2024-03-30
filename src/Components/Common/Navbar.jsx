@@ -57,7 +57,7 @@ const Navbar = () => {
           isPending
             ? "pending"
             : isActive
-            ? "border-b border-gray-700 text-[#FF0563]"
+            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
             : ""
         }
       >
@@ -72,7 +72,7 @@ const Navbar = () => {
           isPending
             ? "pending"
             : isActive
-            ? "border-b border-gray-700 text-[#FF0563]"
+            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
             : ""
         }
       >
@@ -87,7 +87,7 @@ const Navbar = () => {
           isPending
             ? "pending"
             : isActive
-            ? "border-b border-gray-700 text-[#FF0563]"
+            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
             : ""
         }
       >
@@ -100,7 +100,7 @@ const Navbar = () => {
           isPending
             ? "pending"
             : isActive
-            ? "border-b border-gray-700 text-[#FF0563]"
+            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
             : ""
         }
       >
@@ -114,7 +114,7 @@ const Navbar = () => {
           isPending
             ? "pending"
             : isActive
-            ? "border-b border-gray-700 text-[#FF0563]"
+            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
             : ""
         }
       >
@@ -127,7 +127,7 @@ const Navbar = () => {
           isPending
             ? "pending"
             : isActive
-            ? "border-b border-gray-700 text-[#FF0563]"
+            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
             : ""
         }
       >
