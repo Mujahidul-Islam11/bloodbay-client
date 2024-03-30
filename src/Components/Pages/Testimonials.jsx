@@ -2,8 +2,8 @@
 const Testimonials = () => {
   return (
     <div className="my-12">
-        <h1 className="text-4xl text-center">See what our trusted users say</h1>
-      <div className="md:flex gap-6 mx-8 md:mx-16 mt-8">
+        <h1 className="text-4xl text-center text-gray-800 lato-bold-700">See what our trusted users say</h1>
+      <div className="md:flex gap-6 mx-8 md:mx-16 mt-8 md:mt-10">
       <div className="bg-white px-3 py-6 mb-6 rounded-md md:rounded-xl shadow-md text-center">
         <img
           className="w-24 rounded-full mx-auto"

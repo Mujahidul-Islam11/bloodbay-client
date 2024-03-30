@@ -1,11 +1,57 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+
 const Blogs = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("/blog.json")
+      .then((res) => {
+        setBlogs(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  console.log(blogs);
   return (
-    <div className="mx-16">
-      <h2 className="text-4xl">Read our latest blogs</h2>
-      <p className="text-xl">
-        Explore our blog for valuable insights on blood donation, <br /> health, and
-        community impact. Stay informed <br /> and inspired with our latest posts!
+    <div className="mx-8 md:mx-16 my-12">
+      <h2 className="text-4xl mb-3 lato-bold-700 text-gray-800">
+        Read our latest blogs
+      </h2>
+      <p className="text-[18px] text-gray-500">
+        Discover insights on blood donation, health, and community <br />{" "}
+        impact. Stay informed with our latest content!
       </p>
+      {/* blogs section */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-10 my-8 md:my-10">
+        {blogs?.map((blog) => (
+          <div key={blog?.id}>
+            <div className="px-2">
+              <h3 className="px-3 py-2 bg-white text-gray-800 text-sm border lato-bold-600 rounded-lg absolute -mb-20 inline-block">
+                {blog?.author}
+              </h3>
+              <img
+                src={blog?.image}
+                alt=""
+                className="w-[362.66px] h-[203.98px] rounded-2xl"
+              />
+              <h3 className="text-[18px] text-gray-500 mt-2">{blog?.date}</h3>
+              <h1 className="text-2xl text-gray-800 lato-bold-600 my-3">
+                {blog?.title}
+              </h1>
+              <NavLink to={'/'}>
+              <button className="border-b uppercase hover:text-[#FF0563] hover:border-[#FF0563] text-gray-800 border-gray-800 pr-4 font-semibold">
+                continue reading
+              </button>
+              </NavLink>
+            </div>
+          </div>
+        ))}
+      </section>
     </div>
   );
 };
