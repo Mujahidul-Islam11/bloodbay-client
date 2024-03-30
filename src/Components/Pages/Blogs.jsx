@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -16,7 +15,6 @@ const Blogs = () => {
       });
   }, []);
 
-  console.log(blogs);
   return (
     <div className="mx-8 md:mx-16 my-12">
       <h2 className="text-4xl mb-3 lato-bold-700 text-gray-800">
@@ -43,11 +41,7 @@ const Blogs = () => {
               <h1 className="text-2xl text-gray-800 lato-bold-600 my-3">
                 {blog?.title}
               </h1>
-              <NavLink to={'/'}>
-              <button className="border-b uppercase hover:text-[#FF0563] hover:border-[#FF0563] text-gray-800 border-gray-800 pr-4 font-semibold">
-                continue reading
-              </button>
-              </NavLink>
+              <p className="text-gray-500">{blog?.content.slice(0, 300)}...</p>
             </div>
           </div>
         ))}

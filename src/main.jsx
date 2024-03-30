@@ -12,6 +12,7 @@ import Blogs from './Components/Pages/Blogs';
 import Register from './Components/Pages/Register';
 import Login from './Components/Pages/Login';
 import AuthProvider from './AuthProvider';
+import BlogDetails from './Components/Pages/BlogDetails';
 
 const router = createBrowserRouter([
   {
@@ -27,9 +28,9 @@ const router = createBrowserRouter([
         element: <Search></Search>
       },
       {
-        path: "/blog",
+        path: "/blogs",
         element: <Blogs></Blogs>
-      },
+      }
     ]
   },
 

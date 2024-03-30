@@ -67,7 +67,7 @@ const Navbar = () => {
       </NavLink>{" "}
       <br />
       <NavLink
-        to={"/blog"}
+        to={"/blogs"}
         className={({ isActive, isPending }) =>
           isPending
             ? "pending"
@@ -77,7 +77,7 @@ const Navbar = () => {
         }
       >
         <button className="text-xl text-center hover:text-[#FF0563] font-semibold  ">
-          Blog
+          Blogs
         </button>
       </NavLink>{" "}
       <br />
