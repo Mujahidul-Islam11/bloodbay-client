@@ -35,7 +35,7 @@ const Testimonials = () => {
             Exercitation veniam consequat”
           </h2>
           <h2 className="text-xl md:text-xl lato-bold-600 mb-2">Jenny Wilson</h2>
-          <h2 className="">Hello@gmail.com</h2>
+          <h2 className="">Hello@wello.com</h2>
         </div>
       </div>
       <div className="bg-white px-3 py-6 mb-6 rounded-md md:rounded-xl shadow-md text-center">
