@@ -1,20 +1,20 @@
 
 const Footer = () => {
     return (
-        <footer className="flex flex-col border justify-around gap-5 text-gray-700  py-8">
+        <footer className="flex flex-col border justify-around gap-5 bg-[#FF0563] text-white  py-8">
     <nav className="text-lg">
       <ul className="flex h-full flex-wrap items-center justify-center gap-3">
         <li>
-          <a className="cursor-pointer hover:underline hover:text-[#FF0563]">Home</a>
+          <a className="cursor-pointer hover:underline">Home</a>
         </li>
         <li>
-          <a className="cursor-pointer hover:underline hover:text-[#FF0563]">Contact</a>
+          <a className="cursor-pointer hover:underline">Contact</a>
         </li>
         <li>
-          <a className="cursor-pointer hover:underline hover:text-[#FF0563]">About</a>
+          <a className="cursor-pointer hover:underline">About</a>
         </li>
         <li>
-          <a className="cursor-pointer hover:underline hover:text-[#FF0563]">Terms</a>
+          <a className="cursor-pointer hover:underline">Terms</a>
         </li>
       </ul>
     </nav>

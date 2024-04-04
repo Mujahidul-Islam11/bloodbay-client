@@ -17,10 +17,10 @@ const Blogs = () => {
 
   return (
     <div className="mx-8 md:mx-16 my-12">
-      <h2 className="text-4xl mb-3 lato-bold-700 text-gray-800">
+      <h2 className="text-3xl md:text-6xl mb-3 lato-bold-700 text-gray-800">
         Read our latest blogs
       </h2>
-      <p className="text-[18px] text-gray-500">
+      <p className="text-xl text-gray-500">
         Discover insights on blood donation, health, and community <br />{" "}
         impact. Stay informed with our latest content!
       </p>
