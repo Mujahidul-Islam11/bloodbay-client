@@ -12,6 +12,7 @@ import Blogs from './Components/Pages/Blogs';
 import Register from './Components/Pages/Register';
 import Login from './Components/Pages/Login';
 import AuthProvider from './AuthProvider';
+import DonationReq from './Components/Pages/DonationReq';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>
-      }
+      },
+      {
+        path: "/donaReq",
+        element: <DonationReq></DonationReq>
+      },
     ]
   },
 
