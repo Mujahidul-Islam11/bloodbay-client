@@ -19,13 +19,13 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="my-12">
-      <h1 className="text-3xl md:text-5xl text-center text-gray-800 lato-bold-700">
+    <div className="my-28">
+      <h1 className="text-3xl md:text-5xl text-center text-gray-800 lato-bold-700 mb-16">
         See what our trusted users say
       </h1>
       <div className="md:flex gap-6 mx-8 md:mx-16 mt-8 md:mt-10">
         {
-          testimonials?.map(testimonial => <div key={testimonial.id} className="bg-white px-3 py-6 mb-6 rounded-md md:rounded-xl shadow-md text-center">
+          testimonials?.map(testimonial => <div key={testimonial.id} className="bg-white px-3 py-6 mb-6 rounded-md md:rounded-xl shadow-md text-center md:w-[429px]">
           <img
             className="w-24 rounded-full mx-auto"
             src={

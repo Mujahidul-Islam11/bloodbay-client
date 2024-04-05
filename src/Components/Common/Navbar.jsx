@@ -57,7 +57,7 @@ const Navbar = () => {
           isPending
             ? "pending"
             : isActive
-            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
+            ? "md:border-b-2 border-[#FF0563] text-[#FF0563]"
             : ""
         }
       >
@@ -72,7 +72,7 @@ const Navbar = () => {
           isPending
             ? "pending"
             : isActive
-            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
+            ? "md:border-b-2 border-[#FF0563] text-[#FF0563]"
             : ""
         }
       >
@@ -87,7 +87,7 @@ const Navbar = () => {
           isPending
             ? "pending"
             : isActive
-            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
+            ? "md:border-b-2 border-[#FF0563] text-[#FF0563]"
             : ""
         }
       >
@@ -114,7 +114,7 @@ const Navbar = () => {
           isPending
             ? "pending"
             : isActive
-            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
+            ? "md:border-b-2 border-[#FF0563] text-[#FF0563]"
             : ""
         }
       >
@@ -180,7 +180,7 @@ const Navbar = () => {
       </div>
       <div>
         {drawerOpen ? (
-          <div className=" shadow md:hidden absolute right-0 px-2 mr-6 z-40 bg-[#E2E8F0] w-40">
+          <div className=" shadow md:hidden absolute right-0 px-2 mr-6 z-40 bg-[#E2E8F0] md:w-40">
             {links}
           </div>
         ) : (
