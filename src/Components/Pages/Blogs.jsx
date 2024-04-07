@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Button from "../Common/Button";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -28,20 +29,18 @@ const Blogs = () => {
       <section className="grid grid-cols-1 md:grid-cols-3 gap-10 my-8 md:my-10">
         {blogs?.map((blog) => (
           <div key={blog?.id}>
-            <div className="px-2">
-              <h3 className="px-3 py-2 bg-white text-gray-800 text-sm border lato-bold-600 rounded-lg absolute -mb-20 inline-block">
-                {blog?.author}
-              </h3>
+            <div className="border">
               <img
                 src={blog?.image}
                 alt=""
-                className="w-[362.66px] h-[203.98px] rounded-2xl"
+                className="w-full h-[203.98px]"
               />
-              <h3 className="text-[18px] text-gray-500 mt-2">{blog?.date}</h3>
+              <div className="px-3 pb-4">
               <h1 className="text-2xl text-gray-800 lato-bold-600 my-3">
                 {blog?.title}
               </h1>
-              <p className="text-gray-500">{blog?.content.slice(0, 250)}...</p>
+              <p className="text-gray-500">{blog?.content.slice(0, 200)} <Button className={'text-white text-sm'}>Read More...</Button> </p>
+              </div>
             </div>
           </div>
         ))}

@@ -27,7 +27,7 @@ const Login = () => {
 
     return (
         <div className="bg-[#F1BBD5] w-full min-h-screen items-center flex justify-center">
-      <form onSubmit={handleSubmit} className="px-4 border-l md:w-1/3 shadow-xl bg-white py-10 rounded-sm">
+      <form onSubmit={handleSubmit} className="px-4 border-l md:w-1/3 shadow-2xl bg-white py-10 rounded-md">
         <h2 className="text-2xl md:text-4xl lato-bold-700 text-center">Login<span className="text-[#FF0563]">!</span></h2>
         <div className="">
           <div className="">
