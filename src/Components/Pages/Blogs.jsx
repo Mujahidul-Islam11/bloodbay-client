@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Button from "../Common/Button";
+import {Helmet} from "react-helmet";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -16,8 +17,13 @@ const Blogs = () => {
       });
   }, []);
 
+  
+
   return (
     <div className="mx-8 md:mx-16 my-12">
+      <Helmet>
+    <title>BloodBay || Blogs</title>
+  </Helmet>;
       <h2 className="text-3xl md:text-6xl mb-3 lato-bold-700 text-gray-800">
         Read our latest blogs
       </h2>
@@ -30,16 +36,15 @@ const Blogs = () => {
         {blogs?.map((blog) => (
           <div key={blog?.id}>
             <div className="border">
-              <img
-                src={blog?.image}
-                alt=""
-                className="w-full h-[203.98px]"
-              />
+              <img src={blog?.image} alt="" className="w-full h-[203.98px]" />
               <div className="px-3 pb-4">
-              <h1 className="text-2xl text-gray-800 lato-bold-600 my-3">
-                {blog?.title}
-              </h1>
-              <p className="text-gray-500">{blog?.content.slice(0, 200)} <Button className={'text-white text-sm'}>Read More...</Button> </p>
+                <h1 className="text-2xl text-gray-800 lato-bold-600 my-3">
+                  {blog?.title}
+                </h1>
+                <p className="text-gray-500">
+                  {blog?.content.slice(0, 200)}{" "}
+                  <Button className={"text-white text-sm"}>Read More...</Button>{" "}
+                </p>
               </div>
             </div>
           </div>
