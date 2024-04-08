@@ -21,7 +21,7 @@ const Testimonials = () => {
   return (
     <div className="my-28">
       <h1 className="text-3xl md:text-5xl text-center text-gray-800 lato-bold-700 mb-16">
-        See what our trusted users say
+        See what others have experienced
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 mt-8 md:mt-10 items-center mx-8 md:mx-16 gap-6">
         {testimonials?.slice(0, sliceBtn).map((testimonial) => (

@@ -20,13 +20,13 @@ const Navbar = () => {
 
   const profileLinks = (
     <>
-      <NavLink>
+      <NavLink to={"/dash/profile"}>
         <button className="text-xl w-full py-2  hover:bg-[#c8cdd5]">
           Profile
         </button>
       </NavLink>{" "}
       <br />
-      <NavLink>
+      <NavLink to={"/dash"}>
         <button className="text-xl w-full py-2 hover:bg-[#c8cdd5]">
           Dashboard
         </button>

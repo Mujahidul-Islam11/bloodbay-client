@@ -8,7 +8,7 @@ const Home = () => {
       <Helmet>
         <title>BloodBay || Donate Blood Easily</title>
       </Helmet>
-      ;<Banner></Banner>
+      <Banner></Banner>
       <Testimonials></Testimonials>
     </div>
   );

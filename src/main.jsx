@@ -13,6 +13,8 @@ import Register from './Components/Pages/Register';
 import Login from './Components/Pages/Login';
 import AuthProvider from './AuthProvider';
 import DonationReq from './Components/Pages/DonationReq';
+import Dashboard from './Components/Pages/Dashboard';
+import Profile from './Components/Dashboard/Profile';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +48,16 @@ const router = createBrowserRouter([
     path: "/logIn",
     element: <Login></Login>
   },
+  {
+    path: "/dash",
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: "/dash/profile",
+        element: <Profile></Profile>
+      }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

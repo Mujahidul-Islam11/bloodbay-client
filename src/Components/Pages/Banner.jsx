@@ -12,8 +12,8 @@ const Banner = () => {
             <h2 className="text-3xl md:text-6xl text-gray-800 lato-bold-700">Be a Hero Donate Blood, Save Lives</h2>
             <p className="text-xl">Connect with donors in your area and make a difference in someone's life.</p>
             <div className="flex gap-6 justify-center">
-            <NavLink to={'/signUp'}><Button className={'bg-[#FF0563] text-white'}>Join as a donor</Button></NavLink>
-            <NavLink to={'/search'}><Button className={'bg-white text-[#FF0563]'}>Search donors</Button></NavLink>
+            <NavLink to={'/signUp'}><Button className={'bg-[#FF0563] text-white'}>Join as a Donor</Button></NavLink>
+            <NavLink to={'/search'}><Button className={'bg-white text-[#FF0563]'}>Find a Donor</Button></NavLink>
             </div>
             <img src="https://i.postimg.cc/3wLBsMHv/bloodbay-banner-image.png" alt=""  className="mx-auto flex justify-center"/>
         </div>
