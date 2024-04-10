@@ -1,50 +1,70 @@
-import { BiDonateBlood, BiEdit, BiHealth, BiHeart, BiPlus, BiPlusCircle, BiUser } from "react-icons/bi";
-import { BsHeart } from "react-icons/bs";
-import { CiMedicalCase } from "react-icons/ci";
+import { useContext } from "react";
+import { BiDonateBlood, BiPlus } from "react-icons/bi";
 import { FaUserEdit } from "react-icons/fa";
-import { GiBlood } from "react-icons/gi";
-import { MdCreate, MdDashboard } from "react-icons/md";
+import { MdDashboard } from "react-icons/md";
+import { PiArrowsDownUpLight } from "react-icons/pi";
 import { NavLink } from "react-router-dom";
-
+import { AuthContext } from "../../AuthProvider";
 
 const DashSideBar = () => {
-    const dashLinks = (
-        <>
-          <NavLink to={"/dash/createReq"}>
-            <button className="text-xl w-full py-2 px-6 mb-2 bg-[#FF0563] text-white hover:bg-[#ff76aa] flex gap-3 items-center">
-             <BiPlus className="text-2xl text-white"></BiPlus> Create Request
-            </button>
-          </NavLink>{" "}
-          <NavLink to={"/dash"}>
-            <button className="text-xl w-full py-2 px-6 mb-2 hover:bg-[#c8cdd5] flex gap-3 items-center">
-             <MdDashboard className="text-2xl text-black"></MdDashboard> Dashboard
-            </button>
-          </NavLink>{" "}
-          <NavLink to={"/dash/profile"}>
-          <button className="text-xl w-full py-2 px-6 mb-2 hover:bg-[#c8cdd5] flex gap-3 items-center">
-             <FaUserEdit className="text-2xl text-black"></FaUserEdit> Profile Settings
-            </button>
-          </NavLink>{" "}
-          <NavLink to={"/dash/myReq"}>
-          <button className="text-xl w-full py-2 px-6 mb-2 hover:bg-[#c8cdd5] flex gap-3 items-center">
-             <BiDonateBlood className="text-2xl text-black"></BiDonateBlood> My Request
-            </button>
-          </NavLink>{" "}
-        </>
-      );
-    return (
-        <div className="w-64 h-screen bg-white border px-2">
-            <div className="text-xl px-6 my-4">
-            <img
-              className="w-[150px] md:w-[170px]"
-              src="https://i.postimg.cc/vTn05fH1/Screenshot-4-removebg-preview.png"
-              alt="Logo"
-            />{" "}
-          </div>
-          <div className="border-b mb-4"></div>
-            {dashLinks}
+  const { user } = useContext(AuthContext);
+
+  const dashLinks = (
+    <>
+      <NavLink to={"/dash/createReq"}>
+        <button className="text-xl w-full py-2 px-6 mb-2 rounded bg-[#FF0563] text-white hover:bg-[#ff6fa6] hover:text-gray-700 flex gap-3 items-center">
+          <BiPlus className="text-2xl text-white"></BiPlus> Create Request
+        </button>
+      </NavLink>{" "}
+      <NavLink to={"/dash"}>
+        <button className="text-xl w-full py-2 px-6 mb-2 rounded hover:bg-gray-200 flex gap-3 items-center">
+          <MdDashboard className="text-2xl text-black"></MdDashboard> Dashboard
+        </button>
+      </NavLink>{" "}
+      <NavLink to={"/dash/profile"}>
+        <button className="text-xl w-full py-2 px-6 mb-2 rounded hover:bg-gray-200 flex gap-3 items-center">
+          <FaUserEdit className="text-2xl text-black"></FaUserEdit> Profile
+          Settings
+        </button>
+      </NavLink>{" "}
+      <NavLink to={"/dash/myReq"}>
+        <button className="text-xl w-full py-2 px-6 mb-2 rounded hover:bg-gray-200 flex gap-3 items-center">
+          <BiDonateBlood className="text-2xl text-black"></BiDonateBlood> My
+          Request
+        </button>
+      </NavLink>{" "}
+    </>
+  );
+  return (
+    <div className="w-64 h-screen bg-white border px-2">
+      {/* Dashboard logo */}
+      <div className="text-xl px-6 my-4">
+        <img
+          className="w-[150px] md:w-[170px]"
+          src="https://i.postimg.cc/vTn05fH1/Screenshot-4-removebg-preview.png"
+          alt="Logo"
+        />{" "}
+      </div>
+      <div className="border-b mb-4"></div>
+
+      {/* Dashboard routes */}
+      <div>{dashLinks}</div>
+      <div className="border-b mt-4"></div>
+
+      {/* Dashboard Profile */}
+      <NavLink to={"/dash/profile"}>
+        <div className="absolute bottom-6 flex gap-3 items-center hover:hover:bg-gray-200 rounded px-2 py-2">
+          <img
+            className="w-12 cursor-pointer h-12 p-1 rounded-full dark:ring-gray-500"
+            src={user?.photoURL}
+            alt="Bordered avatar"
+          />
+          <h2>{user?.displayName}</h2>
+          <PiArrowsDownUpLight></PiArrowsDownUpLight>
         </div>
-    );
+      </NavLink>
+    </div>
+  );
 };
 
 export default DashSideBar;
