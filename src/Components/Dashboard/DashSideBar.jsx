@@ -8,7 +8,7 @@ import { AuthContext } from "../../AuthProvider";
 
 const DashSideBar = () => {
   const { user } = useContext(AuthContext);
-
+console.log(user?.displayName)
   const dashLinks = (
     <>
       <NavLink to={"/dash/createReq"}>
@@ -38,13 +38,16 @@ const DashSideBar = () => {
   return (
     <div className="w-64 h-screen bg-white border px-2">
       {/* Dashboard logo */}
-      <div className="text-xl px-6 my-4">
+      <NavLink
+      to={'/'}>
+        <div className="text-xl px-6 my-4 cursor-pointer">
         <img
           className="w-[150px] md:w-[170px]"
           src="https://i.postimg.cc/vTn05fH1/Screenshot-4-removebg-preview.png"
           alt="Logo"
         />{" "}
       </div>
+      </NavLink>
       <div className="border-b mb-4"></div>
 
       {/* Dashboard routes */}
