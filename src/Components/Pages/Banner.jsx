@@ -8,7 +8,7 @@ const Banner = () => {
     return (
         <section className="relative">
     <div className="relative z-[1] max-w-screen-xl mx-auto px-4 py-14 md:px-8">
-        <div className="space-y-4 max-w-4xl mx-auto text-center my-5">
+        <div className="space-y-4 max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-6xl text-gray-800 lato-bold-700">Be a Hero Donate Blood, Save Lives</h2>
             <p className="text-xl">Connect with donors in your area and make a difference in someone's life.</p>
             <div className="flex gap-6 justify-center">
