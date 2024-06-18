@@ -43,7 +43,7 @@ const Blogs = () => {
                 </h1>
                 <p className="text-gray-500">
                   {blog?.content.slice(0, 200)}{" "}
-                  <Button className={"text-white text-sm"}>Read More...</Button>{" "}
+                  <Button className={"text-white bg-[#FF0563] shadow-none text-sm"}>Read More...</Button>{" "}
                 </p>
               </div>
             </div>

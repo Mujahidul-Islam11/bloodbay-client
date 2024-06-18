@@ -90,7 +90,7 @@ const Register = () => {
   // getting the data from upazila and district json file
   useEffect(() => {
     axios
-      .get("/public/upazilla.json")
+      .get("./upazilla.json")
       .then((res) => {
         setUpazillas(res.data);
       })
@@ -101,7 +101,7 @@ const Register = () => {
 
   useEffect(() => {
     axios
-      .get("/public/districts.json")
+      .get("./districts.json")
       .then((res) => {
         setDistricts(res.data);
       })
@@ -113,13 +113,13 @@ const Register = () => {
   return (
     <div className="md:flex h-screen">
       <img
-        src="https://i.ibb.co/pXgG0xf/pexels-photo-5340276.jpg"
+        src="https://i.ibb.co/z6SHmwZ/premium-photo-1661769338046-e07bc03ff32a.jpg"
         alt=""
-        className=" md:w-8/12 mb-6 md:min-h-screen"
+        className="md:w-1/2 object-cover"
       />
       <form
         onSubmit={handleSubmit}
-        className="px-4 py-6 rounded-sm md:w-6/12 border md:border-l md:min-h-screen"
+        className="px-20 py-6 rounded-sm md:w-1/2 border md:border-l md:min-h-screen"
       >
         <h2 className="text-2xl -mb-10 md:text-4xl lato-bold-700 text-center">
           Register<span className="text-[#FF0563]">!</span>
@@ -290,7 +290,7 @@ const Register = () => {
           </div>
           <Button
             type="submit"
-            className="text-white font-medium rounded-lg text-[18px] w-full px-5 py-2.5 text-center"
+            className="text-white bg-[#FF0563] font-medium rounded-lg text-[18px] w-full px-5 py-2.5 text-center"
           >
             Register
           </Button>

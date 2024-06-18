@@ -9,7 +9,7 @@ const Testimonials = () => {
   // fetching the data from testimonials.json folder
   useEffect(() => {
     axios
-      .get(`../../../public/testimonials.json`)
+      .get(`./testimonials.json`)
       .then((res) => {
         setTestimonials(res.data);
       })
@@ -48,12 +48,12 @@ const Testimonials = () => {
       {
         sliceBtn == 3 ? <Button
         onClick={() => setSliceBtn(20)}
-        className={"flex justify-center mx-auto text-white"}
+        className={"flex justify-center bg-[#FF0563] mx-auto text-white shadow-none"}
       >
         Load More
       </Button> : <Button
         onClick={() => setSliceBtn(3)}
-        className={"flex justify-center mx-auto text-white"}
+        className={"flex justify-center bg-[#FF0563] mx-auto text-white shadow-none"}
       >
         Load Less
       </Button>

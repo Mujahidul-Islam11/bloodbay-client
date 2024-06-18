@@ -61,11 +61,25 @@ const Navbar = () => {
             : ""
         }
       >
-        <button className="text-xl text-center hover:text-[#FF0563] font-semibold ">
+        <button className="text-lg text-center hover:text-[#FF0563] font-semibold ">
           Home
         </button>
       </NavLink>{" "}
       <br />
+      <NavLink
+        to={"/donaReq"}
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? "md:border-b-2 border-[#FF0563] text-[#FF0563]"
+            : ""
+        }
+      >
+        <button className="text-lg hover:text-[#FF0563] font-semibold  flex items-center gap-2">
+          Donation Request
+        </button>
+      </NavLink>
       <NavLink
         to={"/blogs"}
         className={({ isActive, isPending }) =>
@@ -76,39 +90,12 @@ const Navbar = () => {
             : ""
         }
       >
-        <button className="text-xl text-center hover:text-[#FF0563] font-semibold  ">
+        <button className="text-lg text-center hover:text-[#FF0563] font-semibold  ">
           Blogs
         </button>
       </NavLink>{" "}
       <br />
-      {user ? <NavLink
-        to={"/donaReq"}
-        className={({ isActive, isPending }) =>
-          isPending
-            ? "pending"
-            : isActive
-            ? "md:border-b-2 border-[#FF0563] text-[#FF0563]"
-            : ""
-        }
-      >
-        <button className="text-xl hover:text-[#FF0563] font-semibold  flex items-center gap-2">
-          Donation Request
-        </button>
-      </NavLink>: <NavLink
-        to={"/signUp"}
-        className={({ isActive, isPending }) =>
-          isPending
-            ? "pending"
-            : isActive
-            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
-            : ""
-        }
-      >
-        <button className="text-xl hover:text-[#FF0563] font-semibold  flex items-center gap-2">
-          Register
-        </button>
-      </NavLink>}
-      {user?<NavLink
+      <NavLink
         to={"/payment"}
         className={({ isActive, isPending }) =>
           isPending
@@ -118,30 +105,17 @@ const Navbar = () => {
             : ""
         }
       >
-        <button className="text-xl text-center hover:text-[#FF0563] font-semibold flex items-center gap-2">
+        <button className="text-lg text-center hover:text-[#FF0563] font-semibold flex items-center gap-2">
           Payment
         </button>
-      </NavLink>: <NavLink
-        to={"/logIn"}
-        className={({ isActive, isPending }) =>
-          isPending
-            ? "pending"
-            : isActive
-            ? "border-b-2 border-[#FF0563] text-[#FF0563]"
-            : ""
-        }
-      >
-        <button className="text-xl text-center hover:text-[#FF0563] font-semibold flex items-center gap-2">
-          Log In
-        </button>
-      </NavLink>}{" "}
+      </NavLink>{" "}
       <br />
       {/* <button>Logout</button> */}
     </>
   );
   return (
     <div>
-      <div className="bg-white shadow py-2 px-2 md:px-0">
+      <div className="bg-white shadow-sm py-2 px-2 md:px-0">
         <div className="flex justify-between max-w-screen-xl items-center mx-auto">
           {/* Logo */}
           <div className="text-xl flex items-center">
@@ -153,15 +127,11 @@ const Navbar = () => {
           </div>
           {/* Routes */}
           <div className="hidden md:flex gap-6 items-center">{links}</div>
-          <div className="relative flex items-center gap-2">
+          {user ?<div className="relative flex items-center gap-2">
             <img
               onClick={() => setProfileOpen(!profileOpen)}
               className="w-12 cursor-pointer h-12 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
-              src={
-                user
-                  ? user.photoURL
-                  : "https://i.postimg.cc/7hkMR1VW/empty-face-icon-avatar-with-black-hair-vector-illustration-601298-13402-removebg-preview.png"
-              }
+              src={user?.photoURL}
               alt="Bordered avatar"
             />
             {profileOpen ? (
@@ -175,7 +145,10 @@ const Navbar = () => {
               onClick={() => setDrawerOpen(!drawerOpen)}
               className="flex md:hidden text-xl font-semibold cursor-pointer "
             ></RiMenu2Fill>
-          </div>
+          </div>: <div className="flex gap-4 items-center">
+            <NavLink to={'/logIn'}><button className="text-lg font-semibold">Log In</button></NavLink>
+            <NavLink to={'/signUp'}><button className="text-lg font-semibold bg-[#FF0563] px-3 py-2 rounded-full text-white">Sign Up</button></NavLink>
+            </div>}
         </div>
       </div>
       <div>
