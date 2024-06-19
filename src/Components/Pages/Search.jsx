@@ -15,7 +15,7 @@ const Search = () => {
 
   useEffect(() => {
     axios
-      .get("/public/upazilla.json")
+      .get("./upazilla.json")
       .then((res) => {
         setUpazillas(res.data);
       })
@@ -25,7 +25,7 @@ const Search = () => {
   }, []);
   useEffect(() => {
     axios
-      .get("/public/districts.json")
+      .get("./districts.json")
       .then((res) => {
         setDistricts(res.data);
       })
@@ -35,7 +35,7 @@ const Search = () => {
   }, []);
   useEffect(() => {
     axios
-      .get("../../../public/donarData.json")
+      .get("./donarData.json")
       .then((res) => {
         setDonarData(res.data);
       })
@@ -47,10 +47,9 @@ const Search = () => {
       const data = donarData.filter(item => item.upazilla === UpaZilla || item.district === District);
       setFilteredData(data)
   }
-  console.log(UpaZilla)
     return (
-        <div className=" py-32 md:py-32 px-2">
-            <div className="md:flex justify-center">
+        <div className="">
+            <div className="md:flex justify-center items-center h-screen">
             <div className="flex">
               <div>
                 <select
@@ -111,7 +110,7 @@ const Search = () => {
                 </select>
               </div>
           </div>
-          <Button onClick={()=> handleSearch()} className="px-4 py-2 bg-[#FF0563] mt-6 md:mt-0 text-white text-sm rounded-lg md:rounded-r-lg">Search</Button>
+          <Button onClick={handleSearch} className="px-4 py-2 bg-[#FF0563] shadow-none mt-6 md:mt-0 text-white text-sm rounded-lg md:rounded-r-lg">Search</Button>
         </div>
         <SearchCard filteredDatas={filteredData}></SearchCard>
         </div>
