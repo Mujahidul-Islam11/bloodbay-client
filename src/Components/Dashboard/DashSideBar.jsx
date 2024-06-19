@@ -11,23 +11,23 @@ const DashSideBar = () => {
 console.log(user?.displayName)
   const dashLinks = (
     <>
-      <NavLink to={"/dash/createReq"}>
+      <NavLink to={"/dashboard/createReq"}>
         <button className="text-xl w-full py-2 px-6 mb-2 rounded bg-[#FF0563] text-white hover:bg-[#ff6fa6] hover:text-gray-700 flex gap-3 items-center">
           <BiPlus className="text-2xl text-white"></BiPlus> Create Request
         </button>
       </NavLink>{" "}
-      <NavLink to={"/dash"}>
+      <NavLink to={"/dashboard/dashboardHome"}>
         <button className="text-xl w-full py-2 px-6 mb-2 rounded hover:bg-gray-200 flex gap-3 items-center">
           <MdDashboard className="text-2xl text-black"></MdDashboard> Dashboard
         </button>
       </NavLink>{" "}
-      <NavLink to={"/dash/profile"}>
+      <NavLink to={"/dashboard/profile"}>
         <button className="text-xl w-full py-2 px-6 mb-2 rounded hover:bg-gray-200 flex gap-3 items-center">
           <FaUserEdit className="text-2xl text-black"></FaUserEdit> Profile
           Settings
         </button>
       </NavLink>{" "}
-      <NavLink to={"/dash/myReq"}>
+      <NavLink to={"/dashboard/myReq"}>
         <button className="text-xl w-full py-2 px-6 mb-2 rounded hover:bg-gray-200 flex gap-3 items-center">
           <BiDonateBlood className="text-2xl text-black"></BiDonateBlood> My
           Request
@@ -36,7 +36,7 @@ console.log(user?.displayName)
     </>
   );
   return (
-    <div className="w-64 h-screen bg-white border px-2">
+    <div className="w-80 h-screen bg-white border px-2">
       {/* Dashboard logo */}
       <NavLink
       to={'/'}>
@@ -55,7 +55,7 @@ console.log(user?.displayName)
       <div className="border-b mt-4"></div>
 
       {/* Dashboard Profile */}
-      <NavLink to={"/dash/profile"}>
+      <NavLink to={"/dashboard/profile"}>
         <div className="absolute bottom-6 flex gap-3 items-center hover:hover:bg-gray-200 rounded px-2 py-2">
           <img
             className="w-12 cursor-pointer h-12 p-1 rounded-full dark:ring-gray-500"
