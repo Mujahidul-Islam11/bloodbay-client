@@ -5,7 +5,7 @@ import {Helmet} from "react-helmet"
 const DonationReq = () => {
   const { user } = useContext(AuthContext);
   return (
-    <div className="my-16">
+    <div className="h-screen">
       <Helmet>
         <title>BloodBay || Donation Request</title>
       </Helmet>

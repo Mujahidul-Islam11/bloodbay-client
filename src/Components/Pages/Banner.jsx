@@ -9,7 +9,7 @@ const Banner = () => {
       <div className="relative z-[1] max-w-screen-xl mx-auto my-6 px-4 py-14 md:px-8">
         <div className="space-y-4 max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-6xl text-gray-800 lato-bold-700">
-            Be a Hero Donate Blood, Save Lives
+            Be a Hero! <br /> Donate Blood, Save Lives
           </h2>
           <p className="text-xl">
             Connect with donors in your area and make a difference in someone's
@@ -17,14 +17,14 @@ const Banner = () => {
           </p>
           <div className="flex gap-6 justify-center">
             <NavLink to={"/signUp"}>
-              <Button className={"bg-[#FF0563] text-white border shadow-none"}>
+              <Button className={"bg-[#FF0563] text-white border shadow-none hover:border"}>
                 Join as a Donor
               </Button>
             </NavLink>
             <NavLink to={"/search"}>
               <button
                 className={
-                  "bg-transparent font-bold py-2 px-2 md:px-4 rounded shadow-none text-gray-700 border border-black"
+                  "bg-transparent font-bold py-2 px-2 md:px-4 rounded shadow-none hover:bg-white hover:bg-opacity-50 text-gray-700 border border-black"
                 }
               >
                 Find a Donor

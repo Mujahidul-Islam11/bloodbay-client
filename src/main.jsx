@@ -15,6 +15,7 @@ import AuthProvider from './AuthProvider';
 import DonationReq from './Components/Pages/DonationReq';
 import Dashboard from './Components/Pages/Dashboard';
 import Profile from './Components/Dashboard/Profile';
+import Payment from './Components/Pages/Payment';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         path: "/donaReq",
         element: <DonationReq></DonationReq>
       },
+      {
+        path: "/payment",
+        element: <Payment></Payment>
+      },
     ]
   },
 
@@ -53,7 +58,7 @@ const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     children: [
       {
-        path: "/dash/profile",
+        path: "profile",
         element: <Profile></Profile>
       }
     ]
