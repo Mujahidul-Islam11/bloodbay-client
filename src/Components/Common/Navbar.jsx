@@ -118,6 +118,7 @@ const Navbar = () => {
       <div className="bg-white shadow-sm py-2 px-2 md:px-0">
         <div className="flex justify-between max-w-screen-xl items-center mx-auto">
           {/* Logo */}
+          <NavLink to={'/'}>
           <div className="text-xl flex items-center">
             <img
               className="w-[150px] md:w-[170px]"
@@ -125,6 +126,7 @@ const Navbar = () => {
               alt="Logo"
             />{" "}
           </div>
+          </NavLink>
           {/* Routes */}
           <div className="hidden md:flex gap-6 items-center">{links}</div>
           {user ?<div className="relative flex items-center gap-2">

@@ -5,19 +5,19 @@ import Button from "../Common/Button";
 
 
 const Search = () => {
-  const [UpaZilla, setUpaZilla] = React.useState("");
+  const [UpaZila, setUpaZila] = React.useState("");
   const [District, setDistrict] = React.useState("");
   const [blood, setBlood] = React.useState("");
-  const [upazillas, setUpazillas] = useState([]);
+  const [upazilas, setUpazilas] = useState([]);
   const [districts, setDistricts] = useState([]);
   const [donarData, setDonarData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     axios
-      .get("./upazilla.json")
+      .get("./upazila.json")
       .then((res) => {
-        setUpazillas(res.data);
+        setUpazilas(res.data);
       })
       .catch((error) => {
         console.error(error);
@@ -44,7 +44,7 @@ const Search = () => {
       });
   }, []);
   const handleSearch = () =>{
-      const data = donarData.filter(item => item.upazilla === UpaZilla || item.district === District);
+      const data = donarData.filter(item => item.upazila === UpaZila || item.district === District);
       setFilteredData(data)
   }
     return (
@@ -55,15 +55,15 @@ const Search = () => {
                 <select
                   id="upazilla"
                   name="upaZilla"
-                  value={UpaZilla}
-                  onChange={(event) => setUpaZilla(event.target.value)}
+                  value={UpaZila}
+                  onChange={(event) => setUpaZila(event.target.value)}
                   className="bg-gray-50 border cursor-pointer outline-none rounded-r-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
                   <option value="Rangunia" defaultValue>
                     Rangunia
                   </option>
                   {/* Mapping over Upazilla data */}
-                  {upazillas.map((upa) => (
+                  {upazilas.map((upa) => (
                     <option key={upa.id} value={upa.name}>
                       {upa.name}
                     </option>
