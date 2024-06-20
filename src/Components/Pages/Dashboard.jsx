@@ -7,7 +7,9 @@ const Dashboard = () => {
     return (
         <div className="flex">
             {/* Sidebar */}
+            <div className="hidden md:block">
             <DashSideBar></DashSideBar>
+            </div>
             <div className="w-full">
             <Outlet></Outlet>
             </div>

@@ -16,9 +16,9 @@ import DonationReq from './Components/Pages/DonationReq';
 import Dashboard from './Components/Pages/Dashboard';
 import Profile from './Components/Dashboard/Profile';
 import Payment from './Components/Pages/Payment';
-import DonationReqForm from './Components/Dashboard/DonationReqForm';
-import MyDonationReq from './Components/Pages/MyDonationReq';
+import MyDonationReq from './Components/Dashboard/DashboardRoutes/Donor/MyDonationReq';
 import DashHome from './Components/Dashboard/DashHome';
+import CreateDonationReq from './Components/Dashboard/DashboardRoutes/Donor/CreateDonationReq';
 
 const router = createBrowserRouter([
   {
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
       },
       {
         path: "createReq",
-        element: <DonationReqForm></DonationReqForm>
+        element: <CreateDonationReq></CreateDonationReq>
       },
       {
         path: "dashboardHome",

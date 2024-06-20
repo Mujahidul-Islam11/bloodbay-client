@@ -15,7 +15,7 @@ const Search = () => {
 
   useEffect(() => {
     axios
-      .get("./upazila.json")
+      .get("/upazila.json")
       .then((res) => {
         setUpazilas(res.data);
       })
@@ -25,7 +25,7 @@ const Search = () => {
   }, []);
   useEffect(() => {
     axios
-      .get("./districts.json")
+      .get("/districts.json")
       .then((res) => {
         setDistricts(res.data);
       })
@@ -35,7 +35,7 @@ const Search = () => {
   }, []);
   useEffect(() => {
     axios
-      .get("./donarData.json")
+      .get("/donarData.json")
       .then((res) => {
         setDonarData(res.data);
       })

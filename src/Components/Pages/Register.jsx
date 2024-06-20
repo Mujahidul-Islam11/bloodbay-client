@@ -90,7 +90,7 @@ const Register = () => {
   // getting the data from upazila and district json file
   useEffect(() => {
     axios
-      .get("./upazilla.json")
+      .get("/upazilla.json")
       .then((res) => {
         setUpazillas(res.data);
       })
@@ -101,7 +101,7 @@ const Register = () => {
 
   useEffect(() => {
     axios
-      .get("./districts.json")
+      .get("/districts.json")
       .then((res) => {
         setDistricts(res.data);
       })
