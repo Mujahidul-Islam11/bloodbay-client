@@ -16,7 +16,7 @@ const Dashboard = () => {
        <ion-icon name="close-circle-outline"></ion-icon>
        </div>
        </div>}
-      <header className="block lg:hidden flex items-center gap-10 bg-gradient-to-r from-[#FF0563] to-[#ff05659a] py-3 px-5 text-3xl font-semibold text-white">
+      <header className="block lg:hidden flex items-center gap-4 md:gap-10 bg-gradient-to-r from-[#FF0563] to-[#ff05659a] py-3 px-5 text-3xl font-semibold text-white">
       <div onClick={()=> setDrawer(true)} className="">
       <ion-icon name="menu-outline"></ion-icon>
       </div>
