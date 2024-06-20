@@ -8,6 +8,7 @@ const DonationReqForm = () => {
             </header>
             <main>
                 <form>
+                    <input type="text" />
                 </form>
             </main>
         </div>
