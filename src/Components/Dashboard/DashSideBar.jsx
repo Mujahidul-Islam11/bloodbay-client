@@ -36,7 +36,7 @@ console.log(user?.displayName)
     </>
   );
   return (
-    <div className="w-72 h-screen bg-white border px-2">
+    <div className="md:h-screen w-72 bg-white border px-2">
       {/* Dashboard logo */}
       <NavLink
       to={'/'}>
