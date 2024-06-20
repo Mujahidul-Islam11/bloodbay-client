@@ -1,18 +1,17 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Button from "../Common/Button";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider";
-import { toast } from "react-toastify";
 import swal from "sweetalert";
+import useDistrictZilaData from "../../Hooks/useDistrictZilaData";
 
 const Register = () => {
   const { createUser, upProfile, logOut, user } = useContext(AuthContext);
-  const [upazillas, setUpazillas] = useState([]);
-  const [districts, setDistricts] = useState([]);
+  const {upazilas, districts} = useDistrictZilaData();
   // for select
-  const [UpaZilla, setUpaZilla] = React.useState("");
+  const [UpaZila, setUpaZila] = React.useState("");
   const [District, setDistrict] = React.useState("");
   const [blood, setBlood] = React.useState("");
 
@@ -29,7 +28,7 @@ const Register = () => {
     const email = form.email.value;
     const pass = form.pass.value;
     const confirmPass = form.confirmPass.value;
-    const upazilla = UpaZilla;
+    const upazila = UpaZila;
     const district = District;
     const bloodGroup = blood;
     const image = form.image.files[0];
@@ -50,7 +49,7 @@ const Register = () => {
       email,
       pass,
       confirmPass,
-      upazilla,
+      upazila,
       district,
       bloodGroup,
       image: imageUrl,
@@ -87,28 +86,6 @@ const Register = () => {
     }
   };
 
-  // getting the data from upazila and district json file
-  useEffect(() => {
-    axios
-      .get("/upazila.json")
-      .then((res) => {
-        setUpazillas(res.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get("/districts.json")
-      .then((res) => {
-        setDistricts(res.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
 
   return (
     <div className="md:flex h-screen">
@@ -190,23 +167,23 @@ const Register = () => {
             <div className="mb-5 w-6/12">
               <div>
                 <label
-                  htmlFor="upazilla"
+                  htmlFor="upazila"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Upazilla
+                  Upazila
                 </label>
                 <select
-                  id="upazilla"
-                  name="upaZilla"
-                  value={UpaZilla}
-                  onChange={(event) => setUpaZilla(event.target.value)}
+                  id="upazila"
+                  name="upaZila"
+                  value={UpaZila}
+                  onChange={(event) => setUpaZila(event.target.value)}
                   className="bg-gray-50 border outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
                   <option value="" disabled defaultValue>
-                    Choose an Upazilla
+                    Choose an Upazila
                   </option>
-                  {/* Mapping over Upazilla data */}
-                  {upazillas.map((upa) => (
+                  {/* Mapping over Upazila data */}
+                  {upazilas.map((upa) => (
                     <option key={upa.id} value={upa.name}>
                       {upa.name}
                     </option>
