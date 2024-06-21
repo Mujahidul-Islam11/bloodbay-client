@@ -14,7 +14,7 @@ const DashHome = () => {
         </h3>
       </header>
       {/* Components contents */}
-      <main className="my-12 px-6">
+      <main className="my-28 px-6">
         <div className="overflow-x-auto border rounded-md">
           <table className="table">
             {/* head */}
