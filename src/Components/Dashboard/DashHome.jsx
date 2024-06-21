@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider";
+import { NavLink } from "react-router-dom";
 
 const DashHome = () => {
   const { user } = useContext(AuthContext);
   return (
-    <div className="">
+    <div className="h-screen">
       {/* Welcome msg section */}
       <header className="border-b lg:bg-gradient-to-r from-[#FF0563] to-[#ff05659a] py-3 px-5">
         <h3 className="text-2xl md:text-3xl font-semibold lg:text-white">
@@ -13,15 +14,18 @@ const DashHome = () => {
         </h3>
       </header>
       {/* Components contents */}
-      <main className="my-12 px-6 ">
+      <main className="my-12 px-6">
         <div className="overflow-x-auto border rounded-md">
           <table className="table">
             {/* head */}
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
+                <th>Recipient Name</th>
+                <th>Recipient Location</th>
+                <th>Donation Date</th>
+                <th>Donation Time</th>
+                <th>Donation Status</th>
+                <th></th>
                 <th></th>
               </tr>
             </thead>
@@ -30,35 +34,36 @@ const DashHome = () => {
               <tr>
                 <td>
                   <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          src="https://img.daisyui.com/tailwind-css-component-profile-2@56w.png"
-                          alt="Avatar Tailwind CSS Component"
-                        />
-                      </div>
-                    </div>
                     <div>
-                      <div className="font-bold">Hart Hagerty</div>
-                      <div className="text-sm opacity-50">United States</div>
+                      <div className="font-bold">Kazi Newaz</div>
                     </div>
                   </div>
                 </td>
                 <td>
-                  Zemlak, Daniel and Leannon
-                  <br />
-                  <span className="badge badge-ghost badge-sm">
-                    Desktop Support Technician
-                  </span>
+                  <h3>Rangunia, Chattogram</h3>
                 </td>
-                <td>Purple</td>
+                <td>
+                    6/22/2024
+                </td>
+                <td>
+                    6:00 PM
+                </td>
+                <td>
+                    In-Progress
+                </td>
                 <th>
-                  <button className="btn btn-ghost btn-xs">details</button>
+                  <button className="btn btn-sm bg-green-600 text-white hover:bg-green-400">Done</button>
+                </th>
+                <th>
+                  <button className="btn btn-sm bg-red-600 text-white hover:bg-red-400">Cancel</button>
                 </th>
               </tr>
             </tbody>
           </table>
         </div>
+        <NavLink to={"/dashboard/myReq"}>
+            <button className="btn btn-md flex justify-center mx-auto my-8 px-6 bg-[#FF0563] text-white  hover:bg-[#ff5174]">View All Requests</button>
+        </NavLink>
       </main>
     </div>
   );
