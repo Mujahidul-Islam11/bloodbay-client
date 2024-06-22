@@ -1,7 +1,5 @@
 import { Outlet } from "react-router-dom";
-import DashHome from "../Dashboard/DashHome";
 import DashSideBar from "../Dashboard/DashSideBar";
-import { FaHamburger } from "react-icons/fa";
 import { useState } from "react";
 
 const Dashboard = () => {
