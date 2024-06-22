@@ -49,13 +49,18 @@ const DashHome = () => {
                     6:00 PM
                 </td>
                 <td>
+                  <h2 className="bg-green-600 text-white text-center py-2">
                     In-Progress
+                  </h2>
                 </td>
                 <th>
-                  <button className="btn btn-sm bg-green-600 text-white hover:bg-green-400">Done</button>
+                  <button className="btn btn-sm bg-blue-600 text-white hover:bg-blue-400">Edit</button>
                 </th>
                 <th>
-                  <button className="btn btn-sm bg-red-600 text-white hover:bg-red-400">Cancel</button>
+                  <button className="btn btn-sm bg-red-600 text-white hover:bg-red-400">Remove</button>
+                </th>
+                <th>
+                  <button className="btn btn-sm bg-green-600 text-white hover:bg-green-400">View</button>
                 </th>
               </tr>
             </tbody>
