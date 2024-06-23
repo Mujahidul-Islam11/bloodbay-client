@@ -149,7 +149,7 @@ const Navbar = () => {
             ></RiMenu2Fill>
           </div>: <div className="flex gap-4 items-center">
             <NavLink to={'/logIn'}><button className="text-lg font-semibold">Log In</button></NavLink>
-            <NavLink to={'/signUp'}><button className="text-lg font-semibold bg-[#FF0563] px-3 py-2 rounded-full text-white">Sign Up</button></NavLink>
+            <NavLink to={'/signUp'}><button className="text-lg font-semibold bg-[#FF0563] hover:bg-red-500 px-3 py-1 rounded-sm text-white">Sign Up</button></NavLink>
             </div>}
         </div>
       </div>
