@@ -5,7 +5,6 @@ import Button from "../Common/Button";
 const Testimonials = () => {
   //testimonials data stored in the testimonials useSate
   const [testimonials, setTestimonials] = useState([]);
-  const [sliceBtn, setSliceBtn] = useState(3);
   // fetching the data from testimonials.json folder
   useEffect(() => {
     axios
@@ -24,10 +23,10 @@ const Testimonials = () => {
         See what others have experienced
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 mt-8 md:mt-10 items-center mx-8 md:mx-16 gap-6">
-        {testimonials?.slice(0, sliceBtn).map((testimonial) => (
+        {testimonials?.map((testimonial) => (
           <div
             key={testimonial.id}
-            className="bg-white px-3 py-6 mb-6 md:h-[375px] rounded-md md:rounded-xl shadow-md text-center"
+            className="bg-white px-3 py-6 mb-6 md:h-[375px] border rounded-md md:rounded-xl shadow-md text-center"
           >
             <img
               className="w-24 rounded-full mx-auto"
@@ -45,19 +44,6 @@ const Testimonials = () => {
           </div>
         ))}
       </div>
-      {
-        sliceBtn == 3 ? <Button
-        onClick={() => setSliceBtn(20)}
-        className={"flex justify-center bg-[#FF0563] mx-auto text-white shadow-none"}
-      >
-        Load More
-      </Button> : <Button
-        onClick={() => setSliceBtn(3)}
-        className={"flex justify-center bg-[#FF0563] mx-auto text-white shadow-none"}
-      >
-        Load Less
-      </Button>
-      }
     </div>
   );
 };
