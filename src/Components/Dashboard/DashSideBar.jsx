@@ -56,7 +56,8 @@ console.log(user?.displayName)
 
       {/* Dashboard Profile */}
       <NavLink to={"/dashboard/profile"}>
-        <div className="mt-6 lg:absolute bottom-6 flex gap-3 items-center hover:hover:bg-gray-200 rounded px-2 py-2">
+        <div className="mt-
+        6 lg:absolute bottom-6 flex gap-3 items-center hover:hover:bg-gray-200 rounded px-2 py-2">
           <img
             className="w-12 cursor-pointer h-12 p-1 rounded-full dark:ring-gray-500"
             src={user?.photoURL}
