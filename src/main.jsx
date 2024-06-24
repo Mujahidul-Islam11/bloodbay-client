@@ -1,24 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 import "./index.css";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import LayOut from './LayOut/LayOut';
-import Home from './Components/Pages/Home';
-import Search from './Components/Pages/Search';
-import Blogs from './Components/Pages/Blogs';
-import Register from './Components/Pages/Register';
-import Login from './Components/Pages/Login';
-import AuthProvider from './AuthProvider';
-import DonationReq from './Components/Pages/DonationReq';
-import Dashboard from './Components/Pages/Dashboard';
-import Profile from './Components/Dashboard/Profile';
-import Payment from './Components/Pages/Payment';
-import MyDonationReq from './Components/Dashboard/DashboardRoutes/Donor/MyDonationReq';
-import DashHome from './Components/Dashboard/DashHome';
-import CreateDonationReq from './Components/Dashboard/DashboardRoutes/Donor/CreateDonationReq';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import LayOut from "./LayOut/LayOut";
+import Home from "./Components/Pages/Home";
+import Search from "./Components/Pages/Search";
+import Blogs from "./Components/Pages/Blogs";
+import Register from "./Components/Pages/Register";
+import Login from "./Components/Pages/Login";
+import AuthProvider from "./AuthProvider";
+import DonationReq from "./Components/Pages/DonationReq";
+import Dashboard from "./Components/Pages/Dashboard";
+import Profile from "./Components/Dashboard/Profile";
+import Payment from "./Components/Pages/Payment";
+import MyDonationReq from "./Components/Dashboard/DashboardRoutes/Donor/MyDonationReq";
+import DashHome from "./Components/Dashboard/DashHome";
+import CreateDonationReq from "./Components/Dashboard/DashboardRoutes/Donor/CreateDonationReq";
+import ProfileEdit from "./Components/Dashboard/ProfileEdit";
 
 const router = createBrowserRouter([
   {
@@ -27,34 +25,34 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: "/search",
-        element: <Search></Search>
+        element: <Search></Search>,
       },
       {
         path: "/blogs",
-        element: <Blogs></Blogs>
+        element: <Blogs></Blogs>,
       },
       {
         path: "/donaReq",
-        element: <DonationReq></DonationReq>
+        element: <DonationReq></DonationReq>,
       },
       {
         path: "/payment",
-        element: <Payment></Payment>
+        element: <Payment></Payment>,
       },
-    ]
+    ],
   },
 
   {
     path: "/signUp",
-    element: <Register></Register>
+    element: <Register></Register>,
   },
   {
     path: "/logIn",
-    element: <Login></Login>
+    element: <Login></Login>,
   },
   {
     path: "/dashboard",
@@ -62,28 +60,32 @@ const router = createBrowserRouter([
     children: [
       {
         path: "profile",
-        element: <Profile></Profile>
+        element: <Profile></Profile>,
       },
       {
         path: "createReq",
-        element: <CreateDonationReq></CreateDonationReq>
+        element: <CreateDonationReq></CreateDonationReq>,
       },
       {
         path: "dashboardHome",
-        element: <DashHome></DashHome>
+        element: <DashHome></DashHome>,
       },
       {
         path: "myReq",
-        element: <MyDonationReq></MyDonationReq>
+        element: <MyDonationReq></MyDonationReq>,
       },
-    ]
-  }
+      {
+        path: "edit",
+        element: <ProfileEdit></ProfileEdit>,
+      },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>
 );

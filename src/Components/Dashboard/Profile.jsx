@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider";
+import { NavLink } from "react-router-dom";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -7,7 +8,7 @@ const Profile = () => {
     <div className="py-6 flex justify-center items-center lg:h-screen">
       <main className="flex justify-between">
         <section className="border rounded-lg">
-          <div style={{background: "url(https://i.ibb.co/Nyxt5Dd/photo-1531913764164-f85c52e6e654.jpg)"}} className="lg:w-[600px] h-28 md:h-40 rounded-t-lg object-cover"></div>
+          <div style={{background: "url(https://i.ibb.co/Nyxt5Dd/photo-1531913764164-f85c52e6e654.jpg)"}} className="h-28 md:h-40 rounded-t-lg object-cover"></div>
           <div className="px-8 py-2">
             <img
               src={user?.photoURL}
@@ -18,8 +19,7 @@ const Profile = () => {
               Donor
             </button>
           </div>
-          <div className="flex flex-col justify-center px-4 md:px-8 pb-2 md:pb-8 space-y-5 my-3">
-          <div className="flex flex-col md:flex-row gap-3 md:gap-7 ">
+          <div className="grid grid-cols-1 md:grid-cols-3 container mx-auto px-4 md:px-8 pb-4 md:pb-8 gap-4">
             <div>
             <label className="block mb-2 text-sm text-gray-700 dark:text-white">
               Name
@@ -38,8 +38,6 @@ const Profile = () => {
             </label>
             <h3 className="font-bold text-base">O+</h3>
             </div>
-          </div>
-          <div className="flex flex-col md:flex-row gap-3 md:gap-16">
             <div>
             <label className="block mb-2 text-sm text-gray-700 dark:text-white">
               District
@@ -52,7 +50,9 @@ const Profile = () => {
             </label>
             <h3 className="font-bold text-base">Rangunia</h3>
             </div>
-          </div>
+            <NavLink to={'/dashboard/edit'}>
+            <button className="bg-[#FF0563] text-white px-2 py-1 mt-3">Update profile</button>
+            </NavLink>
           </div>
         </section>
         <section></section>
