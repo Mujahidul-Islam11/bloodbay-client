@@ -30,7 +30,7 @@ console.log(user?.displayName)
       <NavLink to={"/dashboard/myReq"}>
         <button className="text-xl w-full py-2 px-6 mb-2 rounded hover:bg-gray-200 flex gap-3 items-center">
           <BiDonateBlood className="text-2xl text-black"></BiDonateBlood> My
-          Request
+          Requests
         </button>
       </NavLink>{" "}
     </>
