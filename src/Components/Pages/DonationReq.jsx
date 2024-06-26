@@ -10,23 +10,23 @@ const DonationReq = () => {
       <Helmet>
         <title>BloodBay || Donation Request</title>
       </Helmet>
-      <section className="h-screen flex flex-col items-center justify-center">
+      <section className="h-screen py-32 px-14">
       <header>
         <h1 className="text-3xl text-center text-gray-800 lato-bold-700">
           Hello, <span className="text-[#FF0563]">{user?.displayName}</span>
         </h1>
       </header>
-      <main className="my-14 px-6">
+      <main className="my-12 px-6">
         <div className="overflow-x-auto border rounded-md">
           <table className="table">
             {/* head */}
             <thead>
               <tr>
-                <th>Recipient Name</th>
-                <th>Recipient Location</th>
-                <th>Donation Date</th>
-                <th>Donation Time</th>
-                <th>Donation Status</th>
+                <th className="text-base font-semibold">Requester</th>
+                <th className="text-base font-semibold">Location</th>
+                <th className="text-base font-semibold">Donation Date</th>
+                <th className="text-base font-semibold">Donation Time</th>
+                <th className="text-base font-semibold">Status</th>
                 <th></th>
                 <th></th>
               </tr>
@@ -37,40 +37,36 @@ const DonationReq = () => {
                 <td>
                   <div className="flex items-center gap-3">
                     <div>
-                      <div className="font-bold">Kazi Newaz</div>
+                      <div className="text-base text-gray-800">Kazi Newaz</div>
                     </div>
                   </div>
                 </td>
-                <td>
-                  <h3>Rangunia, Chattogram</h3>
+                <td >
+                  <h3 className="text-base text-gray-800">Rangunia, Chattogram</h3>
                 </td>
                 <td>
+                  <h3 className="text-base text-gray-800">
                     6/22/2024
+                  </h3>
                 </td>
                 <td>
+                  <h3 className="text-base text-gray-800">
+
                     6:00 PM
+                  </h3>
                 </td>
                 <td>
-                  <h2 className="bg-green-600 text-white text-center py-2">
-                    In-Progress
+                  <h2 className="bg-yellow-500 text-white text-center p-2">
+                    Pending
                   </h2>
                 </td>
                 <th>
-                  <button className="btn btn-sm bg-blue-600 text-white hover:bg-blue-400">Edit</button>
-                </th>
-                <th>
-                  <button className="btn btn-sm bg-red-600 text-white hover:bg-red-400">Remove</button>
-                </th>
-                <th>
-                  <button className="btn btn-sm bg-green-600 text-white hover:bg-green-400">View</button>
+                  <button className="btn btn-sm bg-green-700 text-white hover:bg-green-600 active:bg-green-600">View</button>
                 </th>
               </tr>
             </tbody>
           </table>
         </div>
-        <NavLink to={"/dashboard/myReq"}>
-            <button className="btn btn-md flex justify-center mx-auto my-8 px-6 bg-[#FF0563] text-white  hover:bg-[#ff5174]">View All Requests</button>
-        </NavLink>
       </main>
       </section>
     </div>
