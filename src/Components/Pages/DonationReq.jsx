@@ -9,7 +9,7 @@ const DonationReq = () => {
       <Helmet>
         <title>BloodBay || Donation Request</title>
       </Helmet>
-      <section>
+      <section className="h-screen flex flex-col items-center justify-center">
       <header>
         <h1 className="text-3xl text-center text-gray-800 lato-bold-700">
           Hello, <span className="text-[#FF0563]">{user?.displayName}</span>
