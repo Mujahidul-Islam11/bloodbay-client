@@ -267,7 +267,7 @@ const Register = () => {
           </div>
           <Button
             type="submit"
-            className="text-white bg-[#FF0563] font-medium rounded-lg text-[18px] w-full px-5 py-2.5 text-center"
+            className="text-white bg-[#FF0563] font-medium shadow-none rounded-lg text-[18px] w-full px-5 py-2.5 text-center"
           >
             Register
           </Button>
