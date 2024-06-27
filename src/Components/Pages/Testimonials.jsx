@@ -29,7 +29,7 @@ const Testimonials = () => {
             className="bg-white px-3 py-6 mb-6 md:h-[375px] border rounded-md md:rounded-xl shadow-md text-center"
           >
             <img
-              className="w-24 rounded-full mx-auto"
+              className="size-24 rounded-full mx-auto object-cover"
               src={testimonial?.imageUrl}
               alt="donarImage"
             />
