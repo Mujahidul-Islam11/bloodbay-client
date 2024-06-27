@@ -18,9 +18,9 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="my-28">
-      <header className="mb-16">
-      <h1 className="text-3xl md:text-4xl text-center text-gray-800 font-semibold">
+    <div className="h-screen flex flex-col justify-center items-center">
+      <header className="">
+      <h1 className="text-3xl md:text-4xl text-center text-gray-800 font-extrabold">
         Voices of Our Community
       </h1>
       </header>
