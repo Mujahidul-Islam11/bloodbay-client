@@ -19,10 +19,12 @@ const Testimonials = () => {
 
   return (
     <div className="my-28">
-      <h1 className="text-3xl md:text-5xl text-center text-gray-800 lato-bold-700 mb-16">
-        See what others have experienced
+      <header className="mb-16">
+      <h1 className="text-3xl md:text-4xl text-center text-gray-800 font-semibold">
+        Voices of Our Community
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 mt-8 md:mt-10 items-center mx-8 md:mx-16 gap-6">
+      </header>
+      <main className="grid grid-cols-1 md:grid-cols-3 mt-8 md:mt-10 items-center mx-8 md:mx-16 gap-6">
         {testimonials?.map((testimonial) => (
           <div
             key={testimonial.id}
@@ -43,7 +45,7 @@ const Testimonials = () => {
             </div>
           </div>
         ))}
-      </div>
+      </main>
     </div>
   );
 };
