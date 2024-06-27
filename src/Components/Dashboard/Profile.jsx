@@ -5,8 +5,13 @@ import { NavLink } from "react-router-dom";
 const Profile = () => {
   const { user } = useContext(AuthContext);
   return (
-    <div className="py-6 flex justify-center items-center lg:h-screen">
-      <main className="flex justify-between">
+    <div className="py-6 flex flex-col justify-center items-center lg:h-screen">
+      <header>
+        <h1 className="text-3xl text-center text-gray-800 lato-bold-700">
+          Your <span className="text-[#FF0563]">Profile!</span>
+        </h1>
+      </header>
+      <main className="flex justify-between my-8">
         <section className="border rounded-lg">
           <div style={{background: "url(https://i.ibb.co/Nyxt5Dd/photo-1531913764164-f85c52e6e654.jpg)"}} className="h-28 md:h-40 rounded-t-lg object-cover"></div>
           <div className="px-8 py-2">
