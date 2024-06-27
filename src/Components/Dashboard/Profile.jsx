@@ -56,7 +56,7 @@ const Profile = () => {
             <h3 className="font-bold text-base">Rangunia</h3>
             </div>
             <NavLink to={'/dashboard/edit'}>
-            <button className="bg-[#FF0563] text-white px-2 py-1 mt-3 rounded-sm">Update profile</button>
+            <button className="bg-[#FF0563] text-white px-2 py-1 mt-3 rounded-sm shadow-md">Update profile</button>
             </NavLink>
           </div>
         </section>
