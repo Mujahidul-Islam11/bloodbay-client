@@ -10,10 +10,10 @@ const DonationReq = () => {
       <Helmet>
         <title>BloodBay || Donation Request</title>
       </Helmet>
-      <section className="h-screen py-32 px-14">
+      <section className="py-28 px-14">
       <header>
         <h1 className="text-3xl text-center text-gray-800 lato-bold-700">
-          Hello, <span className="text-[#FF0563]">{user?.displayName}</span>
+          Welcome back, <span className="text-[#FF0563]">Donor!</span>
         </h1>
       </header>
       <main className="my-12 px-6">
