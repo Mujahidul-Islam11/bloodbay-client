@@ -2,7 +2,7 @@
 
 const DonationReqDetails = () => {
     return (
-        <div>
+        <div className="h-screen">
             
         </div>
     );
