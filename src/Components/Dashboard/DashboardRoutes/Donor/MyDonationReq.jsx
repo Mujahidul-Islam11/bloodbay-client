@@ -6,7 +6,7 @@ const MyDonationReq = () => {
           All Donation, <span className="text-[#FF0563]">Requests!</span>
         </h1>
       </header>
-      <main className="my-12 px-12">
+      <main className="my-8 px-12">
       <div className="overflow-x-auto border rounded-md">
         <table className="table">
           {/* head */}
