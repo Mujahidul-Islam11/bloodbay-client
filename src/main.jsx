@@ -75,7 +75,7 @@ const router = createBrowserRouter([
         element: <MyDonationReq></MyDonationReq>,
       },
       {
-        path: "edit",
+        path: "updateProfile",
         element: <ProfileEdit></ProfileEdit>,
       },
     ],
