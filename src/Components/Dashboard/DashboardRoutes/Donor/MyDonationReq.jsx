@@ -1,6 +1,6 @@
 const MyDonationReq = () => {
   return (
-    <div className="mx-auto h-screen">
+    <div className="h-screen py-24">
       <header>
         <h1 className="text-3xl text-center text-gray-800 lato-bold-700">
           All Donation, <span className="text-[#FF0563]">Requests!</span>
