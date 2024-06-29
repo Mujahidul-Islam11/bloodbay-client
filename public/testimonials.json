@@ -2,21 +2,21 @@
   {
     "id": "1",
     "imageUrl": "https://i.ibb.co/Ct209q2/photo-1535713875002-d1d0cf377fde.jpg",
-    "quote": "Amet minim mollit non deserunt ullam co est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat",
+    "quote": "BloodBay connects donors to those in need seamlessly, making the process efficient and timely.",
     "name": "Jenny Wilson",
     "email": "hello@gmail.com"
   },
   {
     "id": "2",
     "imageUrl": "https://i.ibb.co/2hkYx4f/Ryan-360x290.jpg",
-    "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    "quote": "BloodBay is a lifesaver, simplifying donor connections and managing the donation process.",
     "name": "John Doe",
     "email": "john.doe@example.com"
   },
   {
     "id": "3",
     "imageUrl": "https://i.ibb.co/KsY2fPC/testimonial-user-2.webp",
-    "quote": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "quote": "As a donor, BloodBay lets me volunteer effortlessly and ensures quick connections.",
     "name": "Emily Smith",
     "email": "emily.smith@example.com"
   }

@@ -38,7 +38,7 @@ const Testimonials = () => {
             <div></div>
             <div>
               <h2 className="text-xl my-8">“{testimonial?.quote}”</h2>
-              <h2 className="text-xl md:text-xl lato-bold-600 mb-2">
+              <h2 className="text-xl md:text-xl lato-bold-600 mb-1">
                 {testimonial?.name}
               </h2>
               <h2 className="">{testimonial?.email}</h2>
