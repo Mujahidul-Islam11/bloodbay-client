@@ -1,13 +1,16 @@
+import Lottie from "lottie-react";
+import contact from "../../public/contact.json"
+
 const Contact_US = () => {
   return (
-    <div className="w-full max-w-md mx-auto ">
-      <header className="">
+    <div className="h-screen flex flex-col justify-center items-center">
+      <header className="mb-10">
       <h1 className="text-3xl md:text-4xl text-center text-gray-800 font-extrabold">
       Connect with Us
       </h1>
       </header>
-      <main>
-        <section>
+      <main className="flex flex-row md:flex-col mx-8 md:mx-16 justify-center gap-20">
+        <section className="md:w-1/3">
           <div className="border p-4 rounded-lg">
             <div className="">
               <form onSubmit={e => e.preventDefault()} className="grid gap-4">
@@ -40,8 +43,8 @@ const Contact_US = () => {
             </div>
           </div>
         </section>
-        <section>
-
+        <section className="md:w-1/2">
+        <Lottie animationData={contact} />
         </section>
       </main>
     </div>
