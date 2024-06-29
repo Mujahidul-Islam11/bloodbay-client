@@ -1,7 +1,11 @@
 const Contact_US = () => {
   return (
     <div className="w-full max-w-md mx-auto ">
-      <header></header>
+      <header className="">
+      <h1 className="text-3xl md:text-4xl text-center text-gray-800 font-extrabold">
+      Connect with Us
+      </h1>
+      </header>
       <main>
         <section>
           <div className="border p-4 rounded-lg">
