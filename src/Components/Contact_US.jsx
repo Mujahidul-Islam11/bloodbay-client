@@ -1,22 +1,16 @@
 const Contact_US = () => {
   return (
-    <div>
+    <div className="w-full max-w-md mx-auto ">
       <header></header>
       <main>
         <section>
-          <div className="w-full max-w-md mx-auto">
-            <div className="card-header">
-              <h2>Contact Us</h2>
-              <p>
-                Fill out the form below and we'll get back to you as soon as
-                possible.
-              </p>
-            </div>
-            <div className="card-content">
-              <form className="grid gap-4">
+          <div className="border p-4 rounded-lg">
+            <div className="">
+              <form onSubmit={e => e.preventDefault()} className="grid gap-4">
                 <div className="grid gap-2">
                   <label htmlFor="name">Name</label>
-                  <input id="name" placeholder="Enter your name" />
+                  <input id="name" placeholder="Enter your name"
+                  className="border py-2 px-3 rounded-md" />
                 </div>
                 <div className="grid gap-2">
                   <label htmlFor="email">Email</label>
@@ -24,6 +18,7 @@ const Contact_US = () => {
                     id="email"
                     type="email"
                     placeholder="Enter your email"
+                    className="border py-2 px-3 rounded-md"
                   />
                 </div>
                 <div className="grid gap-2">
@@ -31,18 +26,18 @@ const Contact_US = () => {
                   <textarea
                     id="message"
                     placeholder="Enter your message"
-                    className="min-h-[150px]"
+                    className="min-h-[150px] border py-2 px-3 rounded-md"
                   />
                 </div>
-                <button type="submit" className="w-full">
-                  Send
+                <button className="w-full text-white bg-[#FF0563] py-2 rounded-md">
+                  Send Message
                 </button>
               </form>
             </div>
           </div>
         </section>
         <section>
-            
+
         </section>
       </main>
     </div>
