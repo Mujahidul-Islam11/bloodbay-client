@@ -3,7 +3,7 @@ import contact from "../../public/contact.json"
 
 const Contact_US = () => {
   return (
-    <div className=" flex flex-col justify-center items-center my-10">
+    <div className=" flex flex-col justify-center items-center my-16">
       <header className="mb-10">
       <h1 className="text-3xl md:text-4xl text-center text-gray-800 font-extrabold">
       Connect with Us
