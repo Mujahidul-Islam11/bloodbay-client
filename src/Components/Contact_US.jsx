@@ -9,7 +9,7 @@ const Contact_US = () => {
       Connect with Us
       </h1>
       </header>
-      <main className="flex flex-col md:flex-row mx-8 md:mx-16 justify-center gap-12 md:gap-20">
+      <main className="flex flex-col-reverse md:flex-row mx-8 md:mx-16 justify-center gap-6 md:gap-20">
         <section className="w-full md:w-1/3">
           <div className="border p-4 rounded-lg">
             <div className="">
