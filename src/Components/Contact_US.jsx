@@ -3,14 +3,14 @@ import contact from "../../public/contact.json"
 
 const Contact_US = () => {
   return (
-    <div className="h-screen flex flex-col justify-center items-center">
+    <div className=" flex flex-col justify-center items-center my-10">
       <header className="mb-10">
       <h1 className="text-3xl md:text-4xl text-center text-gray-800 font-extrabold">
       Connect with Us
       </h1>
       </header>
-      <main className="flex flex-row md:flex-col mx-8 md:mx-16 justify-center gap-20">
-        <section className="md:w-1/3">
+      <main className="flex flex-col md:flex-row mx-8 md:mx-16 justify-center gap-12 md:gap-20">
+        <section className="w-full md:w-1/3">
           <div className="border p-4 rounded-lg">
             <div className="">
               <form onSubmit={e => e.preventDefault()} className="grid gap-4">
@@ -43,7 +43,7 @@ const Contact_US = () => {
             </div>
           </div>
         </section>
-        <section className="md:w-1/2">
+        <section className="w-full md:w-1/2">
         <Lottie animationData={contact} />
         </section>
       </main>
