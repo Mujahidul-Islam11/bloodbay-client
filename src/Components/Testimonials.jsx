@@ -18,7 +18,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center my-10">
+    <div className="lg:h-screen flex flex-col justify-center items-center my-10">
       <header className="">
       <h1 className="text-3xl md:text-4xl text-center text-gray-800 font-extrabold">
         Voices of Our Community

@@ -96,7 +96,7 @@ const Register = () => {
       />
       <form
         onSubmit={handleSubmit}
-        className="px-20 py-6 rounded-sm md:w-1/2 border md:border-l md:min-h-screen"
+        className="px-6 md:px-20 py-6 rounded-sm w-full md:w-1/2 border md:border-l md:min-h-screen"
       >
         <h2 className="text-2xl -mb-10 md:text-4xl lato-bold-700 text-center">
           Register<span className="text-[#FF0563]">!</span>
