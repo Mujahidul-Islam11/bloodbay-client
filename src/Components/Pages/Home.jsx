@@ -1,6 +1,6 @@
 import Contact_US from "../Contact_US";
 import Banner from "./Banner";
-import Testimonials from "./Testimonials";
+import Testimonials from "../Testimonials";
 import { Helmet } from "react-helmet";
 
 const Home = () => {

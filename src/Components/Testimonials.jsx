@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Button from "../Common/Button";
+import Button from "./Common/Button";
 /* eslint-disable react/no-unescaped-entities */
 const Testimonials = () => {
   //testimonials data stored in the testimonials useSate
