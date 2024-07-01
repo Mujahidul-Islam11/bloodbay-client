@@ -121,7 +121,7 @@ const Navbar = () => {
           <NavLink to={'/'}>
           <div className="text-xl flex items-center">
             <img
-              className="w-[150px] md:w-[170px]"
+              className="w-[110px] md:w-[170px]"
               src="https://i.postimg.cc/vTn05fH1/Screenshot-4-removebg-preview.png"
               alt="Logo"
             />{" "}
@@ -147,9 +147,9 @@ const Navbar = () => {
               onClick={() => setDrawerOpen(!drawerOpen)}
               className="flex md:hidden text-xl font-semibold cursor-pointer "
             ></RiMenu2Fill>
-          </div>: <div className="flex gap-4 items-center">
-            <NavLink to={'/logIn'}><button className="text-lg font-semibold">Sign In</button></NavLink>
-            <NavLink to={'/signUp'}><button className="text-lg font-semibold bg-[#FF0563] hover:bg-red-500 px-3 py-1 rounded-md text-white">Register</button></NavLink>
+          </div>: <div className="flex gap-2 md:gap-4 items-center">
+            <NavLink to={'/logIn'}><button className="text-sm md:text-lg font-semibold">Sign In</button></NavLink>
+            <NavLink to={'/signUp'}><button className="text-sm md:text-lg  font-semibold bg-[#FF0563] hover:bg-red-500 px-3 py-1 rounded-md text-white">Register</button></NavLink>
             </div>}
         </div>
       </div>
