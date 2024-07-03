@@ -17,14 +17,14 @@ const Banner = () => {
           </p>
           <div className="flex gap-6 justify-center">
             <NavLink to={"/signUp"}>
-              <Button className={"bg-[#FF0563] text-white border shadow-none hover:border"}>
+              <Button className={"bg-[#FF0563] font-normal text-white border shadow-none hover:border px-3 py-2"}>
                 Join as a Donor
               </Button>
             </NavLink>
             <NavLink to={"/search"}>
               <button
                 className={
-                  "bg-transparent font-bold py-2 px-2 md:px-4 rounded shadow-none hover:bg-white hover:bg-opacity-50 text-gray-700 border border-black"
+                  "bg-transparent font-normal py-2 px-3 md:px-4 rounded shadow-md text-black border border-black"
                 }
               >
                 Find a Donor
