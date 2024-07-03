@@ -36,14 +36,14 @@ const Blogs = () => {
         {blogs?.map((blog) => (
           <div key={blog?.id}>
             <div className="border rounded-md shadow-sm">
-              <img src={blog?.image} alt="" className="w-full h-[203.98px]" />
+              <img src={blog?.image} alt="" className="w-full h-[220px] object-cover" />
               <div className="px-3 pb-4">
                 <h1 className="text-2xl text-gray-800 lato-bold-600 my-3">
                   {blog?.title}
                 </h1>
                 <p className="text-gray-500">
-                  {blog?.content.slice(0, 200)}...{" "}
-                  <a className={"text-[#FF0563] underline cursor-pointer font-bold text-sm"}>Read More  &#x2192;</a>{" "}
+                  {blog?.content.slice(0, 200)}{" "}
+                  <a className={"text-[#FF0563] underline cursor-pointer font-bold text-sm"}>Read More &#x2192;</a>{" "}
                 </p>
               </div>
             </div>
