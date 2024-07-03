@@ -42,8 +42,8 @@ const Blogs = () => {
                   {blog?.title}
                 </h1>
                 <p className="text-gray-500">
-                  {blog?.content.slice(0, 200)}{" "}
-                  <Button className={"text-white bg-[#FF0563] shadow-none text-sm"}>Read More...</Button>{" "}
+                  {blog?.content.slice(0, 200)}...{" "}
+                  <a className={"text-[#FF0563] underline cursor-pointer font-bold text-sm"}>Read More  &#x2192;</a>{" "}
                 </p>
               </div>
             </div>
