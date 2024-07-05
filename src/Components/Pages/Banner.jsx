@@ -17,7 +17,7 @@ const Banner = () => {
           </p>
           <div className="flex gap-6 justify-center">
             <NavLink to={"/signUp"}>
-              <Button className={"bg-[#FF0563] font-normal text-white border shadow-none hover:border px-3 py-2"}>
+              <Button className={"bg-[#FF0563] font-normal text-white border shadow-md px-3 py-2"}>
                 Join as a Donor
               </Button>
             </NavLink>
