@@ -1,7 +1,7 @@
 const How_It_Works = () => {
   return (
-    <div className="lg:h-screen flex flex-col justify-center items-center my-16">
-      <header className="mb-10">
+    <div className="my-16 flex flex-col justify-center items-center">
+      <header className="mb-6 md:mb-10">
       <h1 className="text-3xl md:text-4xl text-center text-gray-800 font-extrabold">
       How It Works
       </h1>

@@ -18,8 +18,8 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="lg:h-screen flex flex-col justify-center items-center my-10">
-      <header className="">
+    <div className="flex flex-col justify-center items-center my-16">
+      <header className="mb-6 md:mb-10">
       <h1 className="text-3xl md:text-4xl text-center text-gray-800 font-extrabold">
         Voices of Our Community
       </h1>

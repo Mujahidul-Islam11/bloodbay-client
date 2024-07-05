@@ -10,14 +10,14 @@ const DonationReq = () => {
       <Helmet>
         <title>BloodBay || Donation Request</title>
       </Helmet>
-      <section className="py-28 px-14">
+      <section className="py-28">
         <header>
           <h1 className="text-3xl text-center text-gray-800 lato-bold-700">
             Welcome back, <span className="text-[#FF0563]">Donor!</span>
           </h1>
         </header>
-        <main className="my-12 px-6">
-          <div className="overflow-x-auto border rounded-md">
+        <main className="my-12 px-4 md:px-6">
+          <div className="w-3/4 mx-auto overflow-x-auto border rounded-md">
             <table className="table">
               {/* head */}
               <thead>

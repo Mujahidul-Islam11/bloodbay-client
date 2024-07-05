@@ -118,41 +118,58 @@ const Navbar = () => {
       <div className="bg-white shadow-sm py-2 px-2 md:px-0">
         <div className="flex justify-between max-w-screen-xl items-center mx-auto">
           {/* Logo */}
-          <NavLink to={'/'}>
-          <div className="text-xl flex items-center">
-            <img
-              className="w-[110px] md:w-[170px]"
-              src="https://i.postimg.cc/vTn05fH1/Screenshot-4-removebg-preview.png"
-              alt="Logo"
-            />{" "}
-          </div>
+          <NavLink to={"/"}>
+            <div className="text-xl flex items-center">
+              <img
+                className="w-[110px] md:w-[170px]"
+                src="https://i.postimg.cc/vTn05fH1/Screenshot-4-removebg-preview.png"
+                alt="Logo"
+              />{" "}
+            </div>
           </NavLink>
           {/* Routes */}
           <div className="hidden md:flex gap-6 items-center">{links}</div>
-          {user ?<div className="relative flex items-center gap-2">
-            <img
-              onClick={() => setProfileOpen(!profileOpen)}
-              className="w-12 cursor-pointer h-12 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
-              src={user?.photoURL}
-              alt="Bordered avatar"
-            />
-            {profileOpen ? (
-              <div className="shadow absolute mt-44 right-0 mr-6 z-40 bg-[#E2E8F0] w-32 md:w-40 text-center">
-                {profileLinks}
-              </div>
-            ) : (
-              ""
-            )}
-            <RiMenu2Fill
-              onClick={() => setDrawerOpen(!drawerOpen)}
-              className="flex md:hidden text-xl font-semibold cursor-pointer "
-            ></RiMenu2Fill>
-          </div>: <div className="flex gap-2 md:gap-4 items-center">
-            <NavLink to={'/logIn'}><button className="text-sm md:text-lg font-semibold">Sign In</button></NavLink>
-            <NavLink to={'/signUp'}><button className="text-sm md:text-lg  font-semibold bg-[#FF0563] hover:bg-red-500 px-3 py-1 rounded-md text-white">Register</button></NavLink>
-            </div>}
+          {user ? (
+            <div className="relative flex items-center gap-2">
+              <img
+                onClick={() => setProfileOpen(!profileOpen)}
+                className="w-12 cursor-pointer h-12 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+                src={user?.photoURL}
+                alt="Bordered avatar"
+              />
+              {profileOpen ? (
+                <div className="shadow absolute mt-44 right-0 mr-6 z-40 bg-[#E2E8F0] w-32 md:w-40 text-center">
+                  {profileLinks}
+                </div>
+              ) : (
+                ""
+              )}
+              <RiMenu2Fill
+                onClick={() => setDrawerOpen(!drawerOpen)}
+                className="flex md:hidden text-xl font-semibold cursor-pointer "
+              ></RiMenu2Fill>
+            </div>
+          ) : (
+            <div className="flex gap-2 md:gap-6 items-center">
+              <NavLink to={"/logIn"}>
+                <button className="text-sm md:text-lg font-semibold">
+                  Sign In
+                </button>
+              </NavLink>
+              <NavLink to={"/signUp"}>
+                <button className="text-sm md:text-lg  font-semibold bg-[#FF0563] hover:bg-red-500 px-3 py-1 rounded-md text-white">
+                  Register
+                </button>
+              </NavLink>
+              <RiMenu2Fill
+                onClick={() => setDrawerOpen(!drawerOpen)}
+                className="flex md:hidden text-xl font-semibold cursor-pointer "
+              ></RiMenu2Fill>
+            </div>
+          )}
         </div>
       </div>
+      {/* Profile dropdown */}
       <div>
         {drawerOpen ? (
           <div className=" shadow md:hidden absolute right-0 px-2 mr-6 z-40 bg-[#E2E8F0] md:w-40">
