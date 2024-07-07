@@ -20,7 +20,7 @@ const Blogs = () => {
   
 
   return (
-    <div className="mx-8 md:mx-16 my-12 ">
+    <div className="mx-8 md:mx-16 py-24 ">
       <Helmet>
     <title>BloodBay || Blogs</title>
   </Helmet>
