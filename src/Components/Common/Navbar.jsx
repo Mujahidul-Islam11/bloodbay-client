@@ -114,8 +114,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div>
-      <div className="bg-white shadow-sm py-2 px-2 md:px-0">
+    <div className="shadow-md fixed w-full z-50 bg-white">
+      <div className="shadow-md py-2 px-2 md:px-0">
         <div className="flex justify-between max-w-screen-xl items-center mx-auto">
           {/* Logo */}
           <NavLink to={"/"}>

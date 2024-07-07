@@ -6,8 +6,8 @@ import Button from "../Common/Button";
 const Banner = () => {
   return (
     <section className="relative bg-gradient-to-r from-blue-50 to-purple-50">
-      <div className="relative z-[1] max-w-screen-xl mx-auto px-4 py-14 md:px-8">
-        <div className="space-y-4 max-w-4xl mx-auto text-center">
+      <div className="relative z-[1] max-w-screen-xl mx-auto px-4 py-28 md:px-8">
+        <div className="space-y-3 max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl text-gray-800 lato-bold-700">
             Be a Hero!
           </h2>
@@ -38,7 +38,7 @@ const Banner = () => {
           <img
             src="https://i.postimg.cc/3wLBsMHv/bloodbay-banner-image.png"
             alt=""
-            className="mx-auto flex justify-center"
+            className="md:w-1/2 mx-auto flex justify-center object-cover "
           />
         </div>
       </div>
