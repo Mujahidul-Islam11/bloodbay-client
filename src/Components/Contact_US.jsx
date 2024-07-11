@@ -9,7 +9,7 @@ const Contact_US = () => {
       Connect with Us
       </h1>
       </header>
-      <main className="flex flex-col-reverse md:flex-row mx-8 md:mx-16 justify-center gap-4 md:gap-20">
+      <main className="flex flex-col-reverse md:flex-row mx-8 md:mx-16 justify-between ">
         <section className="w-full md:w-1/3">
           <div className="border p-4 rounded-lg">
             <div className="">
@@ -17,7 +17,7 @@ const Contact_US = () => {
                 <div className="grid gap-2">
                   <label htmlFor="name">Name</label>
                   <input id="name" placeholder="Enter your name"
-                  className="border py-2 px-3 rounded-md" />
+                  className="border py-2 px-3 rounded-md outline-[#FF0563] caret-[#FF0563]" />
                 </div>
                 <div className="grid gap-2">
                   <label htmlFor="email">Email</label>
@@ -25,7 +25,7 @@ const Contact_US = () => {
                     id="email"
                     type="email"
                     placeholder="Enter your email"
-                    className="border py-2 px-3 rounded-md"
+                    className="border py-2 px-3 rounded-md outline-[#FF0563] caret-[#FF0563]"
                   />
                 </div>
                 <div className="grid gap-2">
@@ -33,7 +33,7 @@ const Contact_US = () => {
                   <textarea
                     id="message"
                     placeholder="Enter your message"
-                    className="min-h-[150px] border py-2 px-3 rounded-md"
+                    className="min-h-[150px] border py-2 px-3 rounded-md outline-[#FF0563] caret-[#FF0563]"
                   />
                 </div>
                 <button className="w-full text-white bg-[#FF0563] py-2 rounded-md">
