@@ -1,8 +1,13 @@
 const DonationReqDetails = () => {
   return (
-    <div className="h-screen flex justify-center items-center py-24">
-      <div className="w-3/4 border p-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="md:h-screen flex flex-col justify-center items-center py-24">
+      <header className="mb-8 mt-12">
+        <h3 className="text-center text-3xl text-capitalize ">
+          Donation <span className="text-[#FF0563]">Information!</span>
+        </h3>
+      </header>
+      <main className="mx-4 md:w-3/4 border p-6">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="">
             <label
               htmlFor="name"
@@ -120,23 +125,23 @@ const DonationReqDetails = () => {
             >
               Donation Status
             </label>
-            <h3 id="donationStatus" className="border p-2">
+            <h3 id="donationStatus" className={`border p-2 bg-yellow-500 text-white`}>
               Pending
             </h3>
           </div>
+        </section>
+        <div className="mt-4">
+          <label
+            htmlFor="message"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Message
+          </label>
+          <h3 id="message" className="border p-2">
+            Need emergency blood for my brother.
+          </h3>
         </div>
-          <div className="mt-4">
-            <label
-              htmlFor="message"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
-              Message
-            </label>
-            <h3 id="message" className="border p-2">
-              Need emergency blood for my brother.
-            </h3>
-          </div>
-      </div>
+      </main>
     </div>
   );
 };

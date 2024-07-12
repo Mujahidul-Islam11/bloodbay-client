@@ -24,6 +24,7 @@ const Blogs = () => {
       <Helmet>
     <title>BloodBay || Blogs</title>
   </Helmet>
+      <header>
       <h2 className="text-3xl md:text-6xl mb-3 lato-bold-700 text-gray-800">
         Read our latest blogs
       </h2>
@@ -31,6 +32,7 @@ const Blogs = () => {
         Discover insights on blood donation, health, and community <br />{" "}
         impact. Stay informed with our latest content!
       </p>
+      </header>
       {/* blogs section */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-10 my-8 md:my-10">
         {blogs?.map((blog) => (
