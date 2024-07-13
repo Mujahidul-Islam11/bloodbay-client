@@ -9,6 +9,17 @@ const ProfileEdit = () => {
   const [UpaZila, setUpaZila] = React.useState("");
   const [District, setDistrict] = React.useState("");
   const [showName, setShowName] = useState({});
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const upazila = UpaZila;
+    const district = District;
+    const bloodGroup = blood;
+    const image = form.image.files[0];
+    const imageFile = { image: image };
+  }
   return (
     <div className="py-6 flex flex-col justify-center items-center lg:h-screen">
       <header className="">
@@ -16,22 +27,15 @@ const ProfileEdit = () => {
           Update your <span className="text-[#FF0563]">Profile!</span>
         </h1>
       </header>
-      <main className="my-12 space-y-6">
+      <main className="w-3/4 my-12 space-y-6">
         <div className="flex flex-col items-center py-2">
         <img src={user?.photoURL} alt="" className="size-24 object-cover rounded-full"/>
         <h3 className="text-lg font-semibold">{user?.displayName}</h3>
         </div>
-        <form className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 border ">
-          <input
-            className="border hover:border-black outline-none w-full p-3"
-            type="text"
-            defaultValue={user?.displayName}
-            name="name"
-            placeholder="Type your name"
-            required
-          />
-          <label className="text-center py-3 border">
-            <h3>{showName.name? showName.name : "Choose a file"}</h3>
+        <form onSubmit={handleSubmit} className="p-6 border bg-[#FF0563] mx-auto">
+            
+          <label htmlFor="file_input" className="text-center py-3 border bg-white">
+            <h3 className="">{showName.name? showName.name : "Choose a file"}</h3>
           </label>
           <input
             onChange={(e) => {
@@ -42,8 +46,17 @@ const ProfileEdit = () => {
             }}
             className="hidden"
             type="file"
-            name=""
+            name="image"
             id="file_input"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <input
+            className="border hover:border-black outline-none w-full p-3"
+            type="text"
+            defaultValue={user?.displayName}
+            name="name"
+            placeholder="Type your name"
+            required
           />
           <select
             id="districts"
@@ -78,6 +91,7 @@ const ProfileEdit = () => {
               </option>
             ))}
           </select>
+          </div>
         </form>
       </main>
     </div>

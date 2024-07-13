@@ -9,18 +9,17 @@ import moment from "moment/moment";
 import useDistrictZilaData from "../../../../Hooks/useDistrictZilaData";
 
 const CreateDonationReq = () => {
-  const {user} = useContext(AuthContext);
-  const {upazilas, districts} = useDistrictZilaData();
+  const { user } = useContext(AuthContext);
+  const { upazilas, districts } = useDistrictZilaData();
   // for select
   const [UpaZila, setUpaZila] = React.useState("");
   const [District, setDistrict] = React.useState("");
+  const [blood, setBlood] = React.useState("");
 
   // date and time
   const [startDate, setStartDate] = useState(new Date());
   const donationDatetime = moment(startDate).format("LT");
   const [value, onChange] = useState(donationDatetime.split(" ")[0]);
-
-
 
   return (
     <div className="py-6 flex justify-center flex-col items-center">
@@ -30,9 +29,9 @@ const CreateDonationReq = () => {
         </h3>
       </header>
       <main>
-        <form className="flex flex-col gap-3">
+        <form className="flex flex-col gap-3 border p-4 rounded-md shadow-md">
           {/* Parent div */}
-          <div className="flex flex-col md:flex-row gap-6 md:gap-10">
+          <div className="flex flex-col md:flex-row gap-6">
             {/* Flexbox first column */}
             <div className="flex flex-col gap-3">
               <input
@@ -47,13 +46,13 @@ const CreateDonationReq = () => {
                 type="text"
                 placeholder="Recipient Name"
               />
+
+              <input
+                className="border outline-none w-full md:w-72 p-3"
+                type="text"
+                placeholder="Full Address"
+              />
               <div>
-                <label
-                  htmlFor="countries"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  District
-                </label>
                 <select
                   id="districts"
                   name="district"
@@ -72,26 +71,16 @@ const CreateDonationReq = () => {
                 </select>
               </div>
               {/* date & time picker */}
-              <div className="flex flex-col gap-6">
-                  <div className="w-full">
-                    <p>Donation Time </p>
-                    <TimePicker
-                      onChange={onChange}
-                      value={value}
-                      className={`w-full`}
-                    />
-                  </div>
-                  <div className="">
-                    <p>Donation Date </p>
-                    <div className="border w-full py-[2px]  ">
-                      <DatePicker
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
-                        className="w-full outline-none"
-                      />
-                    </div>
-                  </div>
+              <div className="">
+                <div className="w-full">
+                  <p>Donation Time </p>
+                  <TimePicker
+                    onChange={onChange}
+                    value={value}
+                    className={`w-full`}
+                  />
                 </div>
+              </div>
             </div>
             {/* Flexbox second column */}
             <div className="flex flex-col gap-3">
@@ -107,13 +96,27 @@ const CreateDonationReq = () => {
                 type="text"
                 placeholder="Hospital Name"
               />
+
+              <select
+                id="blood"
+                name="blood"
+                value={blood}
+                onChange={(event) => setBlood(event.target.value)}
+                className="bg-white w-full md:w-72 border outline-none text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option value="" disabled defaultValue>
+                  Choose a blood group
+                </option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
               <div>
-                <label
-                  htmlFor="countries"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Upazila
-                </label>
                 <select
                   id="upazila"
                   name="upazila"
@@ -131,15 +134,27 @@ const CreateDonationReq = () => {
                   ))}
                 </select>
               </div>
-              <input
-                className="border outline-none w-full md:w-72 p-3"
-                type="text"
-                placeholder="Full Address"
-              />
+
+              <div className="md:mt-1.5">
+                <p>Donation Date </p>
+                <div className="border w-full border-black py-[1.2px]">
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    className="w-full outline-none"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-          <textarea name="" className="w-full border outline-none p-3" placeholder="Message"></textarea>
-          <button className="w-full bg-[#FF0563] text-white text-xl rounded-sm py-1">Request</button>
+          <textarea
+            name=""
+            className="w-full border outline-none p-3"
+            placeholder="Message"
+          ></textarea>
+          <button className="w-full bg-[#FF0563] text-white text-xl rounded-sm py-1">
+            Request
+          </button>
         </form>
       </main>
     </div>
