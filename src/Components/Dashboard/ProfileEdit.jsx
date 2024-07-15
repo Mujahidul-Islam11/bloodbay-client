@@ -73,11 +73,9 @@ const ProfileEdit = () => {
         >
           <label
             htmlFor="file_input"
-            className="md:w-1/3 text-center cursor-pointer p-4 border border-black rounded-md shadow-md bg-white flex justify-center items-center gap-2 mb-6 mx-auto "
+            style={{border:"1px solid #FF0563"}}
+            className="md:w-1/3 hover:text-[#FF0563] text-center cursor-pointer p-4 rounded-md shadow-md bg-white flex justify-center items-center gap-2 mb-6 mx-auto "
           >
-            {showName? "": <div className="text-black text-xl">
-            <ion-icon name="cloud-upload-outline"></ion-icon>
-            </div>}
             <h3 className="">
               {showName.name ? showName.name : "Choose a file"}
             </h3>
@@ -96,7 +94,7 @@ const ProfileEdit = () => {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <input
-              className="border hover:border-black w-full p-3"
+              className="border hover:border-black w-full p-3 outline-[#FF0563]"
               type="text"
               defaultValue={user?.displayName}
               name="name"
@@ -109,7 +107,7 @@ const ProfileEdit = () => {
               name="blood"
               value={blood}
               onChange={(event) => setBlood(event.target.value)}
-              className="bg-white w-full border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-white outline-[#FF0563] w-full border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option value="" disabled defaultValue>
                 Choose your blood group
@@ -128,7 +126,7 @@ const ProfileEdit = () => {
               name="district"
               value={District}
               onChange={(event) => setDistrict(event.target.value)}
-              className="bg-white w-full border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-white w-full outline-[#FF0563] border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option value="" disabled defaultValue>
                 Choose a District
@@ -145,7 +143,7 @@ const ProfileEdit = () => {
               name="upazila"
               value={UpaZila}
               onChange={(event) => setUpaZila(event.target.value)}
-              className="bg-white w-full border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-white w-full outline-[#FF0563] border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option value="" disabled defaultValue>
                 Choose a Upazila
@@ -157,7 +155,7 @@ const ProfileEdit = () => {
               ))}
             </select>
           </div>
-          <button className="w-full bg-[#FF0563] text-white text-xl rounded-sm py-2 mt-8">
+          <button className="w-full bg-[#FF0563] text-white text-xl rounded-sm py-2 mt-8 shadow-md">
             Update
           </button>
         </form>
