@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider";
 import useDistrictZilaData from "../../Hooks/useDistrictZilaData";
+import axios from "axios";
 
 const ProfileEdit = () => {
   const { user } = useContext(AuthContext);
@@ -11,8 +12,9 @@ const ProfileEdit = () => {
   const [showName, setShowName] = useState({});
   const [blood, setBlood] = React.useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    // form data
     const form = e.target;
     const name = form.name.value;
     const upazila = UpaZila;
@@ -20,6 +22,17 @@ const ProfileEdit = () => {
     const bloodGroup = blood;
     const image = form.image.files[0];
     const imageFile = { image: image };
+
+    // imgbb post method for getting image
+    const imageRes = await axios.post(image_hosting_api, imageFile, {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    });
+    // the response url
+    const imageUrl = imageRes.data.data.display_url;
+
+    console.log(name, imageUrl, upazila, district, bloodGroup);
   };
   return (
     <div className="py-6 flex flex-col justify-center items-center lg:h-screen">
@@ -28,7 +41,7 @@ const ProfileEdit = () => {
           Update your <span className="text-[#FF0563]">Profile!</span>
         </h1>
       </header>
-      <main className="w-3/4 my-12 space-y-6">
+      <main className="w-1/2 my-12 space-y-6">
         <div className="flex flex-col items-center py-2">
           <img
             src={user?.photoURL}
@@ -39,12 +52,15 @@ const ProfileEdit = () => {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="p-6 border bg-[#FF0563] mx-auto"
+          className="p-6 border shadow-md rounded-md mx-auto"
         >
           <label
             htmlFor="file_input"
-            className="text-center py-3 border bg-white flex justify-center mb-6 mx-auto w-1/2"
+            className="text-center cursor-pointer py-4 border border-black rounded-md shadow-md bg-white flex justify-center items-center gap-2 mb-6 mx-auto w-1/3"
           >
+            <div className="text-black text-xl">
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+            </div>
             <h3 className="">
               {showName.name ? showName.name : "Choose a file"}
             </h3>
@@ -63,7 +79,7 @@ const ProfileEdit = () => {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <input
-              className="border hover:border-black outline-none w-full p-3"
+              className="border hover:border-black w-full p-3"
               type="text"
               defaultValue={user?.displayName}
               name="name"
@@ -76,7 +92,7 @@ const ProfileEdit = () => {
               name="blood"
               value={blood}
               onChange={(event) => setBlood(event.target.value)}
-              className="bg-white w-full border outline-none text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-white w-full border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option value="" disabled defaultValue>
                 Choose your blood group
@@ -95,7 +111,7 @@ const ProfileEdit = () => {
               name="district"
               value={District}
               onChange={(event) => setDistrict(event.target.value)}
-              className="bg-white w-full border outline-none text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-white w-full border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option value="" disabled defaultValue>
                 Choose a District
@@ -112,7 +128,7 @@ const ProfileEdit = () => {
               name="upazila"
               value={UpaZila}
               onChange={(event) => setUpaZila(event.target.value)}
-              className="bg-white w-full border outline-none text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-white w-full border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option value="" disabled defaultValue>
                 Choose a Upazila
