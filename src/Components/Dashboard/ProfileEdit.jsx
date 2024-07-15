@@ -37,11 +37,11 @@ const ProfileEdit = () => {
   return (
     <div className="py-6 flex flex-col justify-center items-center lg:h-screen">
       <header className="">
-        <h1 className="text-3xl text-center text-gray-800 lato-bold-700">
+        <h1 className="text-3xl text-center text-gray-800 lato-bold-700 mt-6">
           Update your <span className="text-[#FF0563]">Profile!</span>
         </h1>
       </header>
-      <main className="w-1/2 my-12 space-y-6">
+      <main className="w-1/2 my-6 space-y-6">
         <div className="flex flex-col items-center py-2">
           <img
             src={user?.photoURL}
