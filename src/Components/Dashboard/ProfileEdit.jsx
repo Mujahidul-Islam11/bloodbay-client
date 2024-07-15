@@ -56,7 +56,7 @@ const ProfileEdit = () => {
         >
           <label
             htmlFor="file_input"
-            className="text-center cursor-pointer py-4 border border-black rounded-md shadow-md bg-white flex justify-center items-center gap-2 mb-6 mx-auto w-1/3"
+            className="md:w-1/3 text-center cursor-pointer py-4 border border-black rounded-md shadow-md bg-white flex justify-center items-center gap-2 mb-6 mx-auto "
           >
             <div className="text-black text-xl">
             <ion-icon name="cloud-upload-outline"></ion-icon>
@@ -140,6 +140,9 @@ const ProfileEdit = () => {
               ))}
             </select>
           </div>
+          <button className="w-full bg-[#FF0563] text-white text-xl rounded-sm py-2 mt-8">
+            Update
+          </button>
         </form>
       </main>
     </div>

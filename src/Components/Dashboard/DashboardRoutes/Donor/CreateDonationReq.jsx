@@ -152,7 +152,7 @@ const CreateDonationReq = () => {
             className="w-full border outline-none p-3"
             placeholder="Message"
           ></textarea>
-          <button className="w-full bg-[#FF0563] text-white text-xl rounded-sm py-1">
+          <button className="w-full bg-[#FF0563] text-white text-xl rounded-sm py-2">
             Request
           </button>
         </form>
