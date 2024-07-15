@@ -2,15 +2,22 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider";
 import useDistrictZilaData from "../../Hooks/useDistrictZilaData";
 import axios from "axios";
+import { toast } from "react-toastify";
+import swal from "sweetalert";
 
 const ProfileEdit = () => {
-  const { user } = useContext(AuthContext);
+  const { user, upProfile } = useContext(AuthContext);
   const { upazilas, districts } = useDistrictZilaData();
   // for select
   const [UpaZila, setUpaZila] = React.useState("");
   const [District, setDistrict] = React.useState("");
   const [showName, setShowName] = useState({});
   const [blood, setBlood] = React.useState("");
+
+  // image hosting api
+  const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+  const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,6 +40,16 @@ const ProfileEdit = () => {
     const imageUrl = imageRes.data.data.display_url;
 
     console.log(name, imageUrl, upazila, district, bloodGroup);
+    upProfile(name, imageUrl)
+    .then((result) => {
+      console.log(result);
+      // toast.success("Profile updated successfully")
+      swal("Profile updated", "Profile has been updated", "success")
+    })
+    .catch(err =>{
+     console.error(err);
+     swal("Opps!", "Something went wrong", "error")
+    })
   };
   return (
     <div className="py-6 flex flex-col justify-center items-center lg:h-screen">
@@ -41,7 +58,7 @@ const ProfileEdit = () => {
           Update your <span className="text-[#FF0563]">Profile!</span>
         </h1>
       </header>
-      <main className="w-1/2 my-6 space-y-6">
+      <main className="mx-6 md:w-1/2 my-6 space-y-6">
         <div className="flex flex-col items-center py-2">
           <img
             src={user?.photoURL}
@@ -56,11 +73,11 @@ const ProfileEdit = () => {
         >
           <label
             htmlFor="file_input"
-            className="md:w-1/3 text-center cursor-pointer py-4 border border-black rounded-md shadow-md bg-white flex justify-center items-center gap-2 mb-6 mx-auto "
+            className="md:w-1/3 text-center cursor-pointer p-4 border border-black rounded-md shadow-md bg-white flex justify-center items-center gap-2 mb-6 mx-auto "
           >
-            <div className="text-black text-xl">
+            {showName? "": <div className="text-black text-xl">
             <ion-icon name="cloud-upload-outline"></ion-icon>
-            </div>
+            </div>}
             <h3 className="">
               {showName.name ? showName.name : "Choose a file"}
             </h3>
