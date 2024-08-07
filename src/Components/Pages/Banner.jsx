@@ -2,8 +2,12 @@
 
 import { NavLink } from "react-router-dom";
 import Button from "../Common/Button";
+import { AuthContext } from "../../AuthProvider";
+import { useContext } from "react";
 
 const Banner = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <section className="relative bg-gradient-to-r from-blue-50 to-purple-50">
       <div className="relative z-[1] max-w-screen-xl mx-auto px-4 py-28 md:px-8">
@@ -12,15 +16,19 @@ const Banner = () => {
             Be a Hero!
           </h2>
           <h2 className="text-3xl md:text-4xl text-gray-800 lato-bold-700">
-          Donate Blood, Save Lives
+            Donate Blood, Save Lives
           </h2>
           <p className="text-xl">
             Connect with donors in your area and make a difference in someone's
             life.
           </p>
           <div className="flex gap-6 justify-center">
-            <NavLink to={"/signUp"}>
-              <Button className={"bg-[#FF0563] font-normal text-white border shadow-none px-3 py-2"}>
+            <NavLink to={user ? "/signUp" : "/"}>
+              <Button
+                className={
+                  "bg-[#FF0563] font-normal text-white border shadow-none px-3 py-2"
+                }
+              >
                 Join as a Donor
               </Button>
             </NavLink>
@@ -32,7 +40,6 @@ const Banner = () => {
               >
                 Find a Donor
               </button>
-              
             </NavLink>
           </div>
           <img
