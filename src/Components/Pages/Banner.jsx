@@ -23,7 +23,7 @@ const Banner = () => {
             life.
           </p>
           <div className="flex gap-6 justify-center">
-            <NavLink to={user ? "/signUp" : "/"}>
+            <NavLink to={user ? "/" : "/signUp"}>
               <Button
                 className={
                   "bg-[#FF0563] font-normal text-white border shadow-none px-3 py-2"
