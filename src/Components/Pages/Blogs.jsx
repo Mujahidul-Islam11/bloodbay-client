@@ -37,7 +37,7 @@ const Blogs = () => {
       <section className="grid grid-cols-1 md:grid-cols-3 gap-10 my-8 md:my-10">
         {blogs?.map((blog) => (
           <div key={blog?.id}>
-            <div className="border rounded-md shadow-sm">
+            <div className="border rounded-md shadow-sm h-[454px]">
               <img src={blog?.image} alt="" className="w-full h-[220px] object-cover" />
               <div className="px-3 pb-4">
                 <h1 className="text-xl text-gray-800 lato-bold-600 my-3">
