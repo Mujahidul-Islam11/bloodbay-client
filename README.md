@@ -27,7 +27,7 @@ To run Blood Bay locally, follow these steps:
 
 1. **Clone the repository:**
    ```
-   git clone https://github.com/yourusername/blood-bay.git
+   git clone https://github.com/Mujahidul-Islam11/bloodbay-client.git
    ```
 
 2. **Navigate to the project directory:**
